@@ -45,9 +45,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\2d_TDP\Script\Appear.cs" />
+     <Compile Include="Assets\2d_TDP\Script\DialogBubble.cs" />
+     <Compile Include="Assets\2d_TDP\Script\PixelBubble.cs" />
+     <Compile Include="Assets\2d_TDP\Script\SwitchScene.cs" />
      <Compile Include="Assets\Scripts\BeatsEngine.cs" />
      <Compile Include="Assets\Scripts\GameManagement.cs" />
      <Compile Include="Assets\TwitchIRC\Example\Scripts\TwitchIrcExample.cs" />
+     <Compile Include="Assets\TwitchIRC\Example\Scripts\TwitchManager.cs" />
      <Compile Include="Assets\TwitchIRC\Scripts\EventArguments.cs" />
      <Compile Include="Assets\TwitchIRC\Scripts\TwitchIrc.cs" />
      <None Include="Assets\TwitchIRC\Readme.txt" />
