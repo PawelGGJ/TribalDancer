@@ -15,18 +15,27 @@ public class DialogBubble : MonoBehaviour {
 	private PixelBubble vActiveBubble = null;
 
 	//show the right bubble on the current character
-	public void ShowBubble(DialogBubble vcharacter, string message)
+	public void ShowBubble(DialogBubble vcharacter, string message, KeyWord keyWord)
 	{
       if (message != null)
-      {   vBubble = new List<PixelBubble> {new PixelBubble
+      {
+         vBubble = new List<PixelBubble> {new PixelBubble
 		      {
 		         vMessage = message,
                vMessageForm = BubbleType.Rectangle,
                vBodyColor = Color.black,
-               vBorderColor = Color.white,
+               vBorderColor = new Color(0, 0, 0, 0),
                vClickToCloseBubble = false,
                vFontColor = Color.white
 		      }};
+
+         if (keyWord == KeyWord.Blood)
+            vBubble.First().vBodyColor = Color.red;
+         if (keyWord == KeyWord.Lava)
+            vBubble.First().vBodyColor = Color.yellow;
+         if (keyWord == KeyWord.Speed)
+            vBubble.First().vBodyColor = Color.cyan;
+
          vActiveBubble = vBubble[0];
       }
 
@@ -169,7 +178,7 @@ public class DialogBubble : MonoBehaviour {
 			if (hit.transform == this.transform) {
 				//check the bubble on the character and make it appear!
 				if (vBubble.Count > 0) {
-					ShowBubble (hit.transform.GetComponent<DialogBubble> (), null);
+					ShowBubble (hit.transform.GetComponent<DialogBubble> (), null, KeyWord.Undefined);
 				}
 			}
 		}
