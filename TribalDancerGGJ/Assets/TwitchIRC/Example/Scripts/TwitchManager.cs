@@ -13,9 +13,7 @@ public class TwitchManager : MonoBehaviour
    public string TokenText;
    public string ChannelText;
 
-   public string MessageText;
-
-   private List<DialogBubble> _dialogBubbles; 
+   private List<Watcher> _watchers; 
 
    void Start()
    {
@@ -26,7 +24,7 @@ public class TwitchManager : MonoBehaviour
       TwitchIrc.Instance.OnServerMessage += OnServerMessage;
       TwitchIrc.Instance.OnExceptionThrown += OnExceptionThrown;
       Connect();
-      _dialogBubbles = FindObjectsOfType<DialogBubble>().ToList();
+      _watchers = FindObjectsOfType<Watcher>().ToList();
    }
 
    public void Connect()
@@ -54,8 +52,19 @@ public class TwitchManager : MonoBehaviour
    void OnChannelMessage(ChannelMessageEventArgs channelMessageArgs)
    {
       Debug.Log("MESSAGE: " + channelMessageArgs.From + ": " + channelMessageArgs.Message);
-      int randomIndex = new Random().Next(_dialogBubbles.Count);
-      _dialogBubbles[randomIndex].ShowBubble(_dialogBubbles[randomIndex], channelMessageArgs.Message);
+
+      var existingWatcher = _watchers.FirstOrDefault(w => w.Name == channelMessageArgs.From);
+      if (existingWatcher == null)
+      {
+         Watcher anyFreeWatcher = _watchers.FirstOrDefault(w => String.IsNullOrEmpty(w.Name));
+         if (anyFreeWatcher != null)
+         {
+            existingWatcher = anyFreeWatcher;
+            existingWatcher.Name = channelMessageArgs.From;
+         }
+      }
+      if (existingWatcher != null)
+         existingWatcher.Shout(channelMessageArgs.Message);
    }
 
    //Get the name of the user who joined to channel 

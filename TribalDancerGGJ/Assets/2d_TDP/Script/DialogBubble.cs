@@ -22,10 +22,10 @@ public class DialogBubble : MonoBehaviour {
 		      {
 		         vMessage = message,
                vMessageForm = BubbleType.Rectangle,
-               vBodyColor = Color.white,
-               vBorderColor = Color.black,
+               vBodyColor = Color.black,
+               vBorderColor = Color.white,
                vClickToCloseBubble = false,
-               vFontColor = Color.black
+               vFontColor = Color.white
 		      }};
          vActiveBubble = vBubble[0];
       }
@@ -131,6 +131,9 @@ public class DialogBubble : MonoBehaviour {
 						//change the message and show it in front of everything
 						vTextMesh.color = vNewFontColor;
 						vTextMesh.text = vTrueMessage;
+                  Font biancoRegularFont = (Font)Resources.Load<Font>("Biancoenero Regular.otf");
+					   vTextMesh.font = biancoRegularFont;
+					   vTextMesh.fontSize = 30;
 						child.GetComponent<MeshRenderer>().sortingOrder = 1550;
 						
 						Transform vMouseIcon = child.FindChild("MouseIcon");
