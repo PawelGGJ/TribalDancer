@@ -46,6 +46,11 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\BeatsEngine.cs" />
+     <Compile Include="Assets\Scripts\GameManagement.cs" />
+     <Compile Include="Assets\TwitchIRC\Example\Scripts\TwitchIrcExample.cs" />
+     <Compile Include="Assets\TwitchIRC\Scripts\EventArguments.cs" />
+     <Compile Include="Assets\TwitchIRC\Scripts\TwitchIrc.cs" />
+     <None Include="Assets\TwitchIRC\Readme.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
