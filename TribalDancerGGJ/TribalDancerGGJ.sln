@@ -1,7 +1,7 @@
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2008
-
-Project("{038BCAAF-70B8-B624-DE0D-9ECCD63EEAE7}") = "TribalDancerGGJ", "Assembly-CSharp.csproj", "{68188EEB-262C-CC5F-52FB-5E84F9A9D9B2}"
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TribalDancerGGJ.CSharp", "TribalDancerGGJ.CSharp.csproj", "{F9F4187F-08E9-2248-EE93-FE4CB2E23628}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,15 +9,12 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{68188EEB-262C-CC5F-52FB-5E84F9A9D9B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{68188EEB-262C-CC5F-52FB-5E84F9A9D9B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{68188EEB-262C-CC5F-52FB-5E84F9A9D9B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{68188EEB-262C-CC5F-52FB-5E84F9A9D9B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9F4187F-08E9-2248-EE93-FE4CB2E23628}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9F4187F-08E9-2248-EE93-FE4CB2E23628}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9F4187F-08E9-2248-EE93-FE4CB2E23628}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9F4187F-08E9-2248-EE93-FE4CB2E23628}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal
