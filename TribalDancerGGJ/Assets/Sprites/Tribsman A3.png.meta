@@ -1,0 +1,409 @@
+fileFormatVersion: 2
+guid: 429182f5a6ff49f4a8d6ed35d60c0b3b
+timeCreated: 1454181990
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Tribsman A3_0
+    21300002: Tribsman A3_1
+    21300004: Tribsman A3_2
+    21300006: Tribsman A3_3
+    21300008: Tribsman A3_4
+    21300010: Tribsman A3_5
+    21300012: Tribsman A3_6
+    21300014: Tribsman A3_7
+    21300016: Tribsman A3_8
+    21300018: Tribsman A3_9
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Tribsman A3_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -45, y: 81}
+        - {x: -45, y: 16}
+        - {x: -27, y: -88}
+        - {x: -13, y: -93}
+        - {x: 36, y: -93}
+        - {x: 36, y: 47}
+        - {x: 22, y: 81}
+      - - {x: 22, y: 56}
+        - {x: 24, y: 54}
+        - {x: 27, y: 55}
+        - {x: 28, y: 59}
+        - {x: 25, y: 61}
+        - {x: 22, y: 58}
+    - name: Tribsman A3_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 22, y: 67}
+        - {x: 7, y: 64}
+        - {x: 9, y: 60}
+        - {x: 8, y: 50}
+        - {x: 12, y: 45}
+        - {x: 13, y: 41}
+        - {x: 8, y: 45}
+        - {x: 8, y: 51}
+        - {x: 5, y: 54}
+        - {x: -4, y: 54}
+        - {x: -12, y: 49}
+        - {x: -14, y: 38}
+        - {x: -14, y: 33}
+        - {x: -23, y: 67}
+        - {x: -45, y: 67}
+        - {x: -45, y: -38}
+        - {x: -28, y: -93}
+        - {x: 35, y: -93}
+        - {x: 35, y: 62}
+        - {x: 23, y: 67}
+      - - {x: 30, y: 47}
+        - {x: 30, y: 45}
+        - {x: 33, y: 42}
+        - {x: 36, y: 43}
+        - {x: 36, y: 47}
+        - {x: 34, y: 49}
+        - {x: 32, y: 49}
+    - name: Tribsman A3_2
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 254
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 31, y: 50}
+        - {x: 26, y: 45}
+        - {x: 18, y: 36}
+        - {x: 16, y: 50}
+        - {x: -38, y: 50}
+        - {x: -38, y: -91}
+        - {x: 41, y: -91}
+        - {x: 41, y: 50}
+      - - {x: 47, y: -14}
+        - {x: 45, y: -16}
+        - {x: 45, y: -23}
+        - {x: 47, y: -25}
+        - {x: 48, y: -25}
+        - {x: 51, y: -22}
+        - {x: 51, y: -16}
+        - {x: 49, y: -14}
+      - - {x: 41, y: 23}
+        - {x: 40, y: 20}
+        - {x: 40, y: 17}
+        - {x: 42, y: 15}
+        - {x: 44, y: 15}
+        - {x: 47, y: 18}
+        - {x: 47, y: 20}
+        - {x: 44, y: 24}
+    - name: Tribsman A3_3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9, y: 46}
+        - {x: -15, y: 28}
+        - {x: -15, y: 21}
+        - {x: -15, y: 25}
+        - {x: -19, y: 33}
+        - {x: -34, y: 37}
+        - {x: -38, y: 34}
+        - {x: -38, y: -46}
+        - {x: -29, y: -89}
+        - {x: -15, y: -93}
+        - {x: 38, y: -93}
+        - {x: 40, y: -73}
+        - {x: 40, y: 46}
+      - - {x: 44, y: -16}
+        - {x: 42, y: -18}
+        - {x: 42, y: -25}
+        - {x: 44, y: -27}
+        - {x: 45, y: -27}
+        - {x: 48, y: -24}
+        - {x: 48, y: -18}
+        - {x: 46, y: -16}
+      - - {x: 36, y: -3}
+        - {x: 34, y: -6}
+        - {x: 34, y: -8}
+        - {x: 37, y: -11}
+        - {x: 39, y: -11}
+        - {x: 42, y: -8}
+        - {x: 42, y: -4}
+        - {x: 40, y: -2}
+    - name: Tribsman A3_4
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: 46}
+        - {x: -34, y: 33}
+        - {x: -34, y: -46}
+        - {x: -24, y: -93}
+        - {x: 36, y: -93}
+        - {x: 36, y: 40}
+        - {x: 33, y: 46}
+      - - {x: 44, y: -16}
+        - {x: 42, y: -18}
+        - {x: 42, y: -25}
+        - {x: 44, y: -27}
+        - {x: 45, y: -27}
+        - {x: 48, y: -24}
+        - {x: 48, y: -18}
+        - {x: 46, y: -16}
+      - - {x: 36, y: -3}
+        - {x: 34, y: -6}
+        - {x: 34, y: -8}
+        - {x: 37, y: -11}
+        - {x: 39, y: -11}
+        - {x: 42, y: -8}
+        - {x: 42, y: -4}
+        - {x: 40, y: -2}
+    - name: Tribsman A3_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9, y: 46}
+        - {x: -34, y: 27}
+        - {x: -34, y: 0}
+        - {x: -33, y: -6}
+        - {x: -29, y: -79}
+        - {x: -21, y: -92}
+        - {x: 36, y: -92}
+        - {x: 36, y: 36}
+        - {x: 29, y: 46}
+      - - {x: 44, y: -15}
+        - {x: 42, y: -17}
+        - {x: 42, y: -24}
+        - {x: 44, y: -26}
+        - {x: 45, y: -26}
+        - {x: 48, y: -23}
+        - {x: 48, y: -17}
+        - {x: 46, y: -15}
+      - - {x: 36, y: -2}
+        - {x: 34, y: -5}
+        - {x: 34, y: -7}
+        - {x: 37, y: -10}
+        - {x: 39, y: -10}
+        - {x: 42, y: -7}
+        - {x: 42, y: -3}
+        - {x: 40, y: -1}
+    - name: Tribsman A3_6
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 47}
+        - {x: -12, y: 45}
+        - {x: -15, y: 29}
+        - {x: -15, y: 22}
+        - {x: -15, y: 26}
+        - {x: -24, y: 39}
+        - {x: -38, y: 31}
+        - {x: -38, y: -36}
+        - {x: -24, y: -92}
+        - {x: 32, y: -92}
+        - {x: 34, y: -91}
+        - {x: 38, y: -80}
+        - {x: 40, y: -62}
+        - {x: 40, y: 47}
+      - - {x: 44, y: -15}
+        - {x: 42, y: -17}
+        - {x: 42, y: -24}
+        - {x: 44, y: -26}
+        - {x: 45, y: -26}
+        - {x: 48, y: -23}
+        - {x: 48, y: -17}
+        - {x: 46, y: -15}
+      - - {x: 36, y: -2}
+        - {x: 34, y: -5}
+        - {x: 34, y: -7}
+        - {x: 37, y: -10}
+        - {x: 39, y: -10}
+        - {x: 42, y: -7}
+        - {x: 42, y: -3}
+        - {x: 40, y: -1}
+    - name: Tribsman A3_7
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 39, y: 35}
+        - {x: 30, y: 43}
+        - {x: 24, y: 44}
+        - {x: 16, y: 35}
+        - {x: 16, y: 47}
+        - {x: 14, y: 48}
+        - {x: -40, y: 48}
+        - {x: -40, y: -92}
+        - {x: 36, y: -92}
+        - {x: 38, y: -80}
+        - {x: 32, y: -77}
+        - {x: 39, y: 18}
+      - - {x: 45, y: -15}
+        - {x: 43, y: -17}
+        - {x: 43, y: -24}
+        - {x: 45, y: -26}
+        - {x: 46, y: -26}
+        - {x: 49, y: -23}
+        - {x: 49, y: -17}
+        - {x: 47, y: -15}
+      - - {x: 39, y: 22}
+        - {x: 38, y: 19}
+        - {x: 38, y: 16}
+        - {x: 40, y: 14}
+        - {x: 42, y: 14}
+        - {x: 45, y: 17}
+        - {x: 45, y: 19}
+        - {x: 42, y: 23}
+    - name: Tribsman A3_8
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -45, y: 68}
+        - {x: -45, y: -14}
+        - {x: -33, y: -92}
+        - {x: 35, y: -92}
+        - {x: 35, y: 63}
+        - {x: 24, y: 68}
+      - - {x: 30, y: 48}
+        - {x: 30, y: 46}
+        - {x: 33, y: 43}
+        - {x: 36, y: 44}
+        - {x: 36, y: 48}
+        - {x: 34, y: 50}
+        - {x: 32, y: 50}
+    - name: Tribsman A3_9
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13, y: 82}
+        - {x: 1, y: 82}
+        - {x: -1, y: 79}
+        - {x: -3, y: 64}
+        - {x: -14, y: 57}
+        - {x: -13, y: 63}
+        - {x: -28, y: 82}
+        - {x: -43, y: 82}
+        - {x: -45, y: 81}
+        - {x: -45, y: 1}
+        - {x: -33, y: -92}
+        - {x: 36, y: -92}
+        - {x: 36, y: -21}
+        - {x: 28, y: 72}
+      - - {x: 22, y: 57}
+        - {x: 24, y: 55}
+        - {x: 27, y: 56}
+        - {x: 28, y: 60}
+        - {x: 25, y: 62}
+        - {x: 22, y: 59}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

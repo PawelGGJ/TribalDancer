@@ -1,0 +1,399 @@
+fileFormatVersion: 2
+guid: 1df31e04a538fa34a88c7eda1bf89bd6
+timeCreated: 1454181868
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Tribesman A1_0
+    21300002: Tribesman A1_1
+    21300004: Tribesman A1_2
+    21300006: Tribesman A1_3
+    21300008: Tribesman A1_4
+    21300010: Tribesman A1_5
+    21300012: Tribesman A1_6
+    21300014: Tribesman A1_7
+    21300016: Tribesman A1_8
+    21300018: Tribesman A1_9
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Tribesman A1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -45, y: 81}
+        - {x: -45, y: 7}
+        - {x: -26, y: -88}
+        - {x: -14, y: -93}
+        - {x: 17, y: -93}
+        - {x: 36, y: -87}
+        - {x: 36, y: 27}
+        - {x: 34, y: 75}
+        - {x: 19, y: 81}
+      - - {x: 22, y: 56}
+        - {x: 24, y: 54}
+        - {x: 27, y: 55}
+        - {x: 28, y: 59}
+        - {x: 25, y: 61}
+        - {x: 22, y: 58}
+    - name: Tribesman A1_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -45, y: 67}
+        - {x: -45, y: -68}
+        - {x: -41, y: -93}
+        - {x: 16, y: -93}
+        - {x: 35, y: -89}
+        - {x: 35, y: 65}
+        - {x: 33, y: 67}
+      - - {x: 30, y: 47}
+        - {x: 30, y: 45}
+        - {x: 33, y: 42}
+        - {x: 36, y: 43}
+        - {x: 36, y: 47}
+        - {x: 34, y: 49}
+        - {x: 32, y: 49}
+    - name: Tribesman A1_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -40, y: 45}
+        - {x: -40, y: -42}
+        - {x: -27, y: -88}
+        - {x: -13, y: -93}
+        - {x: 16, y: -93}
+        - {x: 32, y: -88}
+        - {x: 39, y: -85}
+        - {x: 39, y: 45}
+      - - {x: 45, y: -16}
+        - {x: 43, y: -18}
+        - {x: 43, y: -25}
+        - {x: 45, y: -27}
+        - {x: 46, y: -27}
+        - {x: 49, y: -24}
+        - {x: 49, y: -18}
+        - {x: 47, y: -16}
+      - - {x: 39, y: 21}
+        - {x: 38, y: 18}
+        - {x: 38, y: 15}
+        - {x: 40, y: 13}
+        - {x: 42, y: 13}
+        - {x: 45, y: 16}
+        - {x: 45, y: 18}
+        - {x: 42, y: 22}
+    - name: Tribesman A1_3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5, y: 43}
+        - {x: -11, y: 36}
+        - {x: -14, y: 31}
+        - {x: -15, y: 21}
+        - {x: -15, y: 25}
+        - {x: -19, y: 33}
+        - {x: -34, y: 37}
+        - {x: -38, y: 30}
+        - {x: -38, y: 10}
+        - {x: -30, y: -7}
+        - {x: -28, y: -88}
+        - {x: -14, y: -93}
+        - {x: 16, y: -93}
+        - {x: 40, y: -86}
+        - {x: 40, y: 38}
+        - {x: 24, y: 43}
+      - - {x: 44, y: -16}
+        - {x: 42, y: -18}
+        - {x: 42, y: -25}
+        - {x: 44, y: -27}
+        - {x: 45, y: -27}
+        - {x: 48, y: -24}
+        - {x: 48, y: -18}
+        - {x: 46, y: -16}
+      - - {x: 36, y: -3}
+        - {x: 34, y: -6}
+        - {x: 34, y: -8}
+        - {x: 37, y: -11}
+        - {x: 39, y: -11}
+        - {x: 42, y: -8}
+        - {x: 42, y: -4}
+        - {x: 40, y: -2}
+    - name: Tribesman A1_4
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 72, y: -126}
+        - {x: 72, y: -128}
+        - {x: 128, y: -128}
+        - {x: 128, y: -124}
+        - {x: 74, y: -124}
+      - - {x: -34, y: 43}
+        - {x: -34, y: -93}
+        - {x: 24, y: -93}
+        - {x: 36, y: -91}
+        - {x: 36, y: 22}
+        - {x: 21, y: 43}
+      - - {x: 44, y: -16}
+        - {x: 42, y: -18}
+        - {x: 42, y: -25}
+        - {x: 44, y: -27}
+        - {x: 45, y: -27}
+        - {x: 48, y: -24}
+        - {x: 48, y: -18}
+        - {x: 46, y: -16}
+      - - {x: 36, y: -3}
+        - {x: 34, y: -6}
+        - {x: 34, y: -8}
+        - {x: 37, y: -11}
+        - {x: 39, y: -11}
+        - {x: 42, y: -8}
+        - {x: 42, y: -4}
+        - {x: 40, y: -2}
+    - name: Tribesman A1_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -34, y: 44}
+        - {x: -34, y: -85}
+        - {x: -27, y: -92}
+        - {x: 21, y: -92}
+        - {x: 36, y: -89}
+        - {x: 36, y: 23}
+        - {x: 21, y: 44}
+      - - {x: 44, y: -15}
+        - {x: 42, y: -17}
+        - {x: 42, y: -24}
+        - {x: 44, y: -26}
+        - {x: 45, y: -26}
+        - {x: 48, y: -23}
+        - {x: 48, y: -17}
+        - {x: 46, y: -15}
+      - - {x: 36, y: -2}
+        - {x: 34, y: -5}
+        - {x: 34, y: -7}
+        - {x: 37, y: -10}
+        - {x: 39, y: -10}
+        - {x: 42, y: -7}
+        - {x: 42, y: -3}
+        - {x: 40, y: -1}
+    - name: Tribesman A1_6
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 40, y: 41}
+        - {x: 27, y: 44}
+        - {x: -7, y: 44}
+        - {x: -14, y: 32}
+        - {x: -15, y: 22}
+        - {x: -15, y: 26}
+        - {x: -19, y: 34}
+        - {x: -35, y: 44}
+        - {x: -38, y: 44}
+        - {x: -38, y: -34}
+        - {x: -30, y: -92}
+        - {x: 33, y: -92}
+        - {x: 37, y: -84}
+        - {x: 33, y: -75}
+        - {x: 40, y: -16}
+      - - {x: 44, y: -15}
+        - {x: 42, y: -17}
+        - {x: 42, y: -24}
+        - {x: 44, y: -26}
+        - {x: 45, y: -26}
+        - {x: 48, y: -23}
+        - {x: 48, y: -17}
+        - {x: 46, y: -15}
+      - - {x: 36, y: -2}
+        - {x: 34, y: -5}
+        - {x: 34, y: -7}
+        - {x: 37, y: -10}
+        - {x: 39, y: -10}
+        - {x: 42, y: -7}
+        - {x: 42, y: -3}
+        - {x: 40, y: -1}
+    - name: Tribesman A1_7
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 39, y: 39}
+        - {x: 36, y: 46}
+        - {x: -40, y: 46}
+        - {x: -40, y: -42}
+        - {x: -27, y: -87}
+        - {x: -13, y: -92}
+        - {x: 21, y: -92}
+        - {x: 33, y: -88}
+        - {x: 38, y: -80}
+        - {x: 39, y: -49}
+      - - {x: 45, y: -15}
+        - {x: 43, y: -17}
+        - {x: 43, y: -24}
+        - {x: 45, y: -26}
+        - {x: 46, y: -26}
+        - {x: 49, y: -23}
+        - {x: 49, y: -17}
+        - {x: 47, y: -15}
+      - - {x: 39, y: 22}
+        - {x: 38, y: 19}
+        - {x: 38, y: 16}
+        - {x: 40, y: 14}
+        - {x: 42, y: 14}
+        - {x: 45, y: 17}
+        - {x: 45, y: 19}
+        - {x: 42, y: 23}
+    - name: Tribesman A1_8
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -45, y: 68}
+        - {x: -45, y: -24}
+        - {x: -29, y: -88}
+        - {x: -18, y: -92}
+        - {x: 35, y: -92}
+        - {x: 35, y: 68}
+      - - {x: 30, y: 48}
+        - {x: 30, y: 46}
+        - {x: 33, y: 43}
+        - {x: 36, y: 44}
+        - {x: 36, y: 48}
+        - {x: 34, y: 50}
+        - {x: 32, y: 50}
+    - name: Tribesman A1_9
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -45, y: 82}
+        - {x: -45, y: -29}
+        - {x: -37, y: -92}
+        - {x: 36, y: -92}
+        - {x: 36, y: 79}
+        - {x: 35, y: 82}
+      - - {x: 22, y: 57}
+        - {x: 24, y: 55}
+        - {x: 27, y: 56}
+        - {x: 28, y: 60}
+        - {x: 25, y: 62}
+        - {x: 22, y: 59}
+      - - {x: 72, y: 128}
+        - {x: 72, y: 126}
+        - {x: 74, y: 124}
+        - {x: 128, y: 124}
+        - {x: 128, y: 128}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

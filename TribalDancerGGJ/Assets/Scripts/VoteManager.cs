@@ -32,7 +32,7 @@ public class VoteManager : MonoBehaviour
       // reset counters
       _curseVotes.ToList().ForEach(kvp => _curseVotes[kvp.Key] = 0);
 
-      GetComponent<Watcher>().Shout("***TWITCH, CHOOSE HIS FATE: BLOOD, LAVA OR SPEED***", 100);
+      Shout("***TWITCH, CHOOSE HIS FATE: BLOOD, LAVA OR SPEED***", SpeechType.GodVotingRequest);
       _voting = true;
    }
 
@@ -40,8 +40,15 @@ public class VoteManager : MonoBehaviour
    {
       int topVoteCount = _curseVotes.Values.Max();
       Curse winner = _curseVotes.First(kvp => kvp.Value == topVoteCount).Key;
-      GetComponent<Watcher>().Shout(string.Format("***YOU CHOSE {0}***", winner.ToString().ToUpper()), 100);
+      Shout(string.Format("***YOU CHOSE {0}***", winner.ToString().ToUpper()), SpeechType.GodVotingResolved);
       _voting = false;
+   }
+
+   public void Shout(string message, SpeechType speechType)
+   {
+      var dialogBubble = GetComponent<DialogBubble>();
+
+      dialogBubble.ShowBubble(dialogBubble, message, speechType);
    }
 
    public void Vote(Curse curse)

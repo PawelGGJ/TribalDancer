@@ -50,7 +50,9 @@
      <Compile Include="Assets\2d_TDP\Script\PixelBubble.cs" />
      <Compile Include="Assets\2d_TDP\Script\SwitchScene.cs" />
      <Compile Include="Assets\Scripts\BeatsEngine.cs" />
+     <Compile Include="Assets\Scripts\CameraShake.cs" />
      <Compile Include="Assets\Scripts\GameManagement.cs" />
+     <Compile Include="Assets\Scripts\SpeechType.cs" />
      <Compile Include="Assets\Scripts\VoteManager.cs" />
      <Compile Include="Assets\Scripts\Watcher.cs" />
      <Compile Include="Assets\TwitchIRC\Example\Scripts\TwitchIrcExample.cs" />

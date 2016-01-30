@@ -5,15 +5,14 @@ using System.Collections;
 
 public class Watcher : MonoBehaviour
 {
-   private IDictionary<KeyWord, Curse> _cursesToKeywords = new Dictionary<KeyWord, Curse>
+   private IDictionary<SpeechType, Curse> _cursesToSpeechTypes = new Dictionary<SpeechType, Curse>
    {
-      {KeyWord.Blood, Curse.Blood},
-      {KeyWord.Speed, Curse.Speed},
-      {KeyWord.Lava, Curse.Lava},
+      {SpeechType.Blood, Curse.Blood},
+      {SpeechType.Speed, Curse.Speed},
+      {SpeechType.Lava, Curse.Lava},
    };
 
    public string Name;
-   private int _turns = 0;
 	// Use this for initialization
 	void Start () {
 	
@@ -22,52 +21,36 @@ public class Watcher : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-	   if (String.IsNullOrEmpty(Name))
-	      return;
-	   ++_turns;
-      if(_turns % 900 == 0)
-         Shout(Name);
+
 	}
 
    public void Shout(string message, int limit = 30)
    {
-      KeyWord keyWord = DetectKeyWord(message);
-      if (_cursesToKeywords.ContainsKey(keyWord))
-         FindObjectOfType<VoteManager>().Vote(_cursesToKeywords[keyWord]);
-
       var dialogBubble = GetComponent<DialogBubble>();
 
-      string modifiedMessage = message.Length <= limit ? message : message.Substring(0, limit) + ("...");
-      dialogBubble.ShowBubble(dialogBubble, modifiedMessage, keyWord);
+      SpeechType speechType = DetectSpeechType(message);
+
+      string trimmedMessage = message.Length <= limit ? message : message.Substring(0, limit) + ("...");
+      dialogBubble.ShowBubble(dialogBubble, trimmedMessage, speechType);
    }
 
-   private KeyWord DetectKeyWord(string message)
+   private SpeechType DetectSpeechType(string message)
    {
       string messageLower = message.ToLower();
       if (messageLower.Contains("b"))
-         return KeyWord.Blood;
+         return SpeechType.Blood;
       if (messageLower.Contains("s"))
-         return KeyWord.Speed;
+         return SpeechType.Speed;
       if (messageLower.Contains("l"))
-         return KeyWord.Lava;
+         return SpeechType.Lava;
       if (messageLower.Contains("boo"))
-         return KeyWord.Stone;
+         return SpeechType.Stone;
 
       if (messageLower.Contains("nice"))
-         return KeyWord.Flower;
+         return SpeechType.Flower;
       if (messageLower.Contains("good"))
-         return KeyWord.Flower;
+         return SpeechType.Flower;
 
-      return KeyWord.Undefined;
+      return SpeechType.Undefined;
    }
-}
-
-public enum KeyWord
-{
-   Undefined,
-   Blood,
-   Speed,
-   Lava,
-   Stone,
-   Flower
 }

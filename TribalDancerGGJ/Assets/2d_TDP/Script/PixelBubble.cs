@@ -26,6 +26,7 @@ namespace AssemblyCSharp
 		public Color vBodyColor = Color.white;
 		public Color vFontColor = Color.black;
 		public bool vClickToCloseBubble = false;
+	   public int vFontSize;
 	}
 }
 

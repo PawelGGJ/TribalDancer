@@ -15,7 +15,7 @@ public class DialogBubble : MonoBehaviour {
 	private PixelBubble vActiveBubble = null;
 
 	//show the right bubble on the current character
-	public void ShowBubble(DialogBubble vcharacter, string message, KeyWord keyWord)
+	public void ShowBubble(DialogBubble vcharacter, string message, SpeechType speechType)
 	{
       if (message != null)
       {
@@ -23,19 +23,25 @@ public class DialogBubble : MonoBehaviour {
 		      {
 		         vMessage = message,
                vMessageForm = BubbleType.Rectangle,
-               vBodyColor = Color.black,
+               vBodyColor = new Color(0,0,0,0),
                vBorderColor = new Color(0, 0, 0, 0),
                vClickToCloseBubble = false,
-               vFontColor = Color.white
+               vFontColor = Color.white,
+               vFontSize = 20
 		      }};
 
-         if (keyWord == KeyWord.Blood)
-            vBubble.First().vBodyColor = Color.red;
-         if (keyWord == KeyWord.Lava)
-            vBubble.First().vBodyColor = Color.yellow;
-         if (keyWord == KeyWord.Speed)
-            vBubble.First().vBodyColor = Color.cyan;
+         if (speechType == SpeechType.Blood)
+            vBubble.First().vFontColor = Color.red;
+         if (speechType == SpeechType.Lava)
+            vBubble.First().vFontColor = Color.yellow;
+         if (speechType == SpeechType.Speed)
+            vBubble.First().vFontColor = Color.cyan;
 
+         if (speechType == SpeechType.GodVotingRequest || speechType == SpeechType.GodVotingResolved)
+         {
+            vBubble.First().vFontSize = 30;
+            vBubble.First().vFontColor = Color.white;
+         }
          vActiveBubble = vBubble[0];
       }
 
@@ -113,7 +119,8 @@ public class DialogBubble : MonoBehaviour {
 				Color vNewBodyColor = new Color(vBubble.vBodyColor.r, vBubble.vBodyColor.g, vBubble.vBodyColor.b, 0f);
 				Color vNewBorderColor = new Color(vBubble.vBorderColor.r, vBubble.vBorderColor.g, vBubble.vBorderColor.b, 0f);
 				Color vNewFontColor = new Color(vBubble.vFontColor.r, vBubble.vFontColor.g, vBubble.vFontColor.b, 255f);
-				
+			   int fontSize = vBubble.vFontSize;
+
 				//get all image below the main Object
 				foreach (Transform child in vBubbleObject.transform)
 				{
@@ -142,7 +149,7 @@ public class DialogBubble : MonoBehaviour {
 						vTextMesh.text = vTrueMessage;
                   Font biancoRegularFont = (Font)Resources.Load<Font>("Biancoenero Regular.otf");
 					   vTextMesh.font = biancoRegularFont;
-					   vTextMesh.fontSize = 30;
+					   vTextMesh.fontSize = fontSize;
 						child.GetComponent<MeshRenderer>().sortingOrder = 1550;
 						
 						Transform vMouseIcon = child.FindChild("MouseIcon");
@@ -178,7 +185,7 @@ public class DialogBubble : MonoBehaviour {
 			if (hit.transform == this.transform) {
 				//check the bubble on the character and make it appear!
 				if (vBubble.Count > 0) {
-					ShowBubble (hit.transform.GetComponent<DialogBubble> (), null, KeyWord.Undefined);
+					ShowBubble (hit.transform.GetComponent<DialogBubble> (), null, SpeechType.Undefined);
 				}
 			}
 		}
