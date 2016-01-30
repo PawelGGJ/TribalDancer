@@ -65,7 +65,6 @@ public class TwitchManager : MonoBehaviour
       }
       if (existingWatcher != null)
       {
-
          existingWatcher.Shout(channelMessageArgs.Message);
       }
    }

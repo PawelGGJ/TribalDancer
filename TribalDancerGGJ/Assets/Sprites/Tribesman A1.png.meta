@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 1df31e04a538fa34a88c7eda1bf89bd6
-timeCreated: 1454181868
+guid: 24b5de23f09b78043965a3997a3dc1cb
+timeCreated: 1454184757
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -68,7 +68,7 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: -45, y: 81}
@@ -154,7 +154,7 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: -5, y: 43}
@@ -197,14 +197,9 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 72, y: -126}
-        - {x: 72, y: -128}
-        - {x: 128, y: -128}
-        - {x: 128, y: -124}
-        - {x: 74, y: -124}
       - - {x: -34, y: 43}
         - {x: -34, y: -93}
         - {x: 24, y: -93}
@@ -235,7 +230,7 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: -34, y: 44}
@@ -372,7 +367,7 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: -45, y: 82}
@@ -387,11 +382,6 @@ TextureImporter:
         - {x: 28, y: 60}
         - {x: 25, y: 62}
         - {x: 22, y: 59}
-      - - {x: 72, y: 128}
-        - {x: 72, y: 126}
-        - {x: 74, y: 124}
-        - {x: 128, y: 124}
-        - {x: 128, y: 128}
     outline: []
   spritePackingTag: 
   userData: 

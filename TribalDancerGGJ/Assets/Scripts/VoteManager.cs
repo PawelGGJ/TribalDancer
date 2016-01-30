@@ -15,12 +15,17 @@ public class VoteManager : MonoBehaviour
 {
    private bool _voting = false;
 
-   private readonly IDictionary<Curse, int> _curseVotes = new Dictionary<Curse, int>
+   private static IDictionary<Curse, int> _curseVotes = CreateEmptyCurseVotes();
+
+   private static Dictionary<Curse, int> CreateEmptyCurseVotes()
    {
-      {Curse.Blood, 0},
-      {Curse.Speed, 0},
-      {Curse.Lava, 0},
-   };
+      return new Dictionary<Curse, int>
+      {
+         {Curse.Blood, 0},
+         {Curse.Speed, 0},
+         {Curse.Lava, 0},
+      };
+   }
 
    public bool IsVoting()
    {
@@ -40,6 +45,7 @@ public class VoteManager : MonoBehaviour
    {
       int topVoteCount = _curseVotes.Values.Max();
       Curse winner = _curseVotes.First(kvp => kvp.Value == topVoteCount).Key;
+      _curseVotes = CreateEmptyCurseVotes();
       Shout(string.Format("***YOU CHOSE {0}***", winner.ToString().ToUpper()), SpeechType.GodVotingResolved);
       _voting = false;
    }

@@ -45,7 +45,7 @@ public class DialogBubble : MonoBehaviour {
          vActiveBubble = vBubble[0];
       }
 
-		bool gotonextbubble = false;
+		bool gotonextbubble = true;
 
 		//if vcurrentbubble is still there, just close it
 		if (vActiveBubble != null) {
@@ -60,9 +60,6 @@ public class DialogBubble : MonoBehaviour {
 				if (vActiveBubble == vcharacter.vBubble.Last ())
 					vcharacter.IsTalking = false;
 			}
-
-
-
 		}
 		
 		foreach (PixelBubble vBubble in vcharacter.vBubble)
@@ -104,20 +101,21 @@ public class DialogBubble : MonoBehaviour {
 				{
 					//create bubble
 					vBubbleObject = Instantiate(Resources.Load<GameObject> ("Customs/BubbleRectangle"));
-					vBubbleObject.transform.position = vcharacter.transform.position + new Vector3(1.35f, 1.9f, 0f); //move a little bit the teleport particle effect
+				   float offset = vBubble.vMessage.Length < vLimit ? 0.3f : -.15f;
+               vBubbleObject.transform.position = vcharacter.transform.position + new Vector3(offset, 0.5f, 0f); //move a little bit the teleport particle effect
 				}
 				else 
 				{
 					//create bubble
 					vBubbleObject = Instantiate(Resources.Load<GameObject> ("Customs/BubbleRound"));
-					vBubbleObject.transform.position = vcharacter.transform.position + new Vector3(0.15f, 1.75f, 0f); //move a little bit the teleport particle effect
+               vBubbleObject.transform.position = vcharacter.transform.position + new Vector3(-0.5f, 0.5f, 0f); //move a little bit the teleport particle effect
 				}
 
 				//show the mouse and wait for the user to left click OR NOT (if not, after 10 sec, it disappear)
 				vBubbleObject.GetComponent<Appear>().needtoclick = vBubble.vClickToCloseBubble;
-				
-				Color vNewBodyColor = new Color(vBubble.vBodyColor.r, vBubble.vBodyColor.g, vBubble.vBodyColor.b, 0f);
-				Color vNewBorderColor = new Color(vBubble.vBorderColor.r, vBubble.vBorderColor.g, vBubble.vBorderColor.b, 0f);
+
+            Color vNewBodyColor = new Color(vBubble.vBodyColor.r, vBubble.vBodyColor.g, vBubble.vBodyColor.b, vBubble.vBodyColor.a);
+            Color vNewBorderColor = new Color(vBubble.vBorderColor.r, vBubble.vBorderColor.g, vBubble.vBorderColor.b, vBubble.vBorderColor.a);
 				Color vNewFontColor = new Color(vBubble.vFontColor.r, vBubble.vFontColor.g, vBubble.vFontColor.b, 255f);
 			   int fontSize = vBubble.vFontSize;
 
@@ -176,19 +174,19 @@ public class DialogBubble : MonoBehaviour {
 
 	void Update () 
 	{
-		//check if we have the mouse over the character
-		ray = Camera.main.ScreenPointToRay (Input.mousePosition);
-	
-		//make sure we left click and is on a NPC
-		if (Physics.Raycast (ray, out hit) && Input.GetMouseButtonDown (0)) {
-			//only return NPC
-			if (hit.transform == this.transform) {
-				//check the bubble on the character and make it appear!
-				if (vBubble.Count > 0) {
-					ShowBubble (hit.transform.GetComponent<DialogBubble> (), null, SpeechType.Undefined);
-				}
-			}
-		}
+		////check if we have the mouse over the character
+		//ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+	   //
+		////make sure we left click and is on a NPC
+		//if (Physics.Raycast (ray, out hit) && Input.GetMouseButtonDown (0)) {
+		//	//only return NPC
+		//	if (hit.transform == this.transform) {
+		//		//check the bubble on the character and make it appear!
+		//		if (vBubble.Count > 0) {
+		//			ShowBubble (hit.transform.GetComponent<DialogBubble> (), null, SpeechType.Undefined);
+		//		}
+		//	}
+		//}
 
 		//can't have a current character 
 		if (!IsTalking)

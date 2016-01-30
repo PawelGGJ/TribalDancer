@@ -5,7 +5,7 @@ using System.Collections;
 
 public class Watcher : MonoBehaviour
 {
-   private IDictionary<SpeechType, Curse> _cursesToSpeechTypes = new Dictionary<SpeechType, Curse>
+   private readonly IDictionary<SpeechType, Curse> _cursesToSpeechTypes = new Dictionary<SpeechType, Curse>
    {
       {SpeechType.Blood, Curse.Blood},
       {SpeechType.Speed, Curse.Speed},
@@ -24,14 +24,19 @@ public class Watcher : MonoBehaviour
 
 	}
 
-   public void Shout(string message, int limit = 30)
+   public void Shout(string message, int limit = 40)
    {
       var dialogBubble = GetComponent<DialogBubble>();
 
       SpeechType speechType = DetectSpeechType(message);
 
+      var voteManager = FindObjectOfType<VoteManager>();
+      bool isVoting = voteManager.IsVoting();
+      if (isVoting && _cursesToSpeechTypes.ContainsKey(speechType))
+         voteManager.Vote(_cursesToSpeechTypes[speechType]);
+
       string trimmedMessage = message.Length <= limit ? message : message.Substring(0, limit) + ("...");
-      dialogBubble.ShowBubble(dialogBubble, trimmedMessage, speechType);
+      dialogBubble.ShowBubble(dialogBubble, trimmedMessage, isVoting ? speechType : SpeechType.Undefined);
    }
 
    private SpeechType DetectSpeechType(string message)
