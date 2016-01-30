@@ -3,7 +3,7 @@ public enum SpeechType
    Undefined,
    Blood,
    Speed,
-   Lava,
+   Quake,
    GodVotingRequest,
    GodVotingResolved,
    Stone,

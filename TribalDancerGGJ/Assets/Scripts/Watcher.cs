@@ -9,7 +9,7 @@ public class Watcher : MonoBehaviour
    {
       {SpeechType.Blood, Curse.Blood},
       {SpeechType.Speed, Curse.Speed},
-      {SpeechType.Lava, Curse.Lava},
+      {SpeechType.Quake, Curse.Quake},
    };
 
    public string Name;
@@ -42,12 +42,12 @@ public class Watcher : MonoBehaviour
    private SpeechType DetectSpeechType(string message)
    {
       string messageLower = message.ToLower();
-      if (messageLower.Contains("b"))
-         return SpeechType.Blood;
+      if (messageLower.Contains("a"))
+         return SpeechType.Quake;
       if (messageLower.Contains("s"))
          return SpeechType.Speed;
       if (messageLower.Contains("l"))
-         return SpeechType.Lava;
+         return SpeechType.Blood;
       if (messageLower.Contains("boo"))
          return SpeechType.Stone;
 

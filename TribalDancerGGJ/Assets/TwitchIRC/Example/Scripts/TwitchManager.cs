@@ -87,25 +87,4 @@ public class TwitchManager : MonoBehaviour
    {
       Debug.Log(exeption);
    }
-
-   private SpeechType DetectKeyWord(string message)
-   {
-      string messageLower = message.ToLower();
-      if (messageLower.Contains("b"))
-         return SpeechType.Blood;
-      if (messageLower.Contains("s"))
-         return SpeechType.Speed;
-      if (messageLower.Contains("l"))
-         return SpeechType.Lava;
-      if (messageLower.Contains("boo"))
-         return SpeechType.Stone;
-
-      if (messageLower.Contains("nice"))
-         return SpeechType.Flower;
-      if (messageLower.Contains("good"))
-         return SpeechType.Flower;
-
-      return SpeechType.Undefined;
-   }
-   
 }

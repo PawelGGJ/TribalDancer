@@ -8,7 +8,7 @@ public enum Curse
 {
    Blood,
    Speed,
-   Lava
+   Quake
 }
 
 public class VoteManager : MonoBehaviour
@@ -23,7 +23,7 @@ public class VoteManager : MonoBehaviour
       {
          {Curse.Blood, 0},
          {Curse.Speed, 0},
-         {Curse.Lava, 0},
+         {Curse.Quake, 0},
       };
    }
 
@@ -35,7 +35,7 @@ public class VoteManager : MonoBehaviour
    public void StartVoting()
    {
       // reset counters
-      _curseVotes.ToList().ForEach(kvp => _curseVotes[kvp.Key] = 0);
+      _curseVotes = CreateEmptyCurseVotes();
 
       Shout("***TWITCH, CHOOSE HIS FATE: BLOOD, LAVA OR SPEED***", SpeechType.GodVotingRequest);
       _voting = true;
@@ -45,8 +45,8 @@ public class VoteManager : MonoBehaviour
    {
       int topVoteCount = _curseVotes.Values.Max();
       Curse winner = _curseVotes.First(kvp => kvp.Value == topVoteCount).Key;
-      _curseVotes = CreateEmptyCurseVotes();
       Shout(string.Format("***YOU CHOSE {0}***", winner.ToString().ToUpper()), SpeechType.GodVotingResolved);
+      FindObjectOfType<CurseManager>().PrepareCurse(winner);
       _voting = false;
    }
 

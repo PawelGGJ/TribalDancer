@@ -32,7 +32,7 @@ public class DialogBubble : MonoBehaviour {
 
          if (speechType == SpeechType.Blood)
             vBubble.First().vFontColor = Color.red;
-         if (speechType == SpeechType.Lava)
+         if (speechType == SpeechType.Quake)
             vBubble.First().vFontColor = Color.yellow;
          if (speechType == SpeechType.Speed)
             vBubble.First().vFontColor = Color.cyan;

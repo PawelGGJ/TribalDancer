@@ -8,10 +8,20 @@ public class CameraShake : MonoBehaviour
    public Transform camTransform;
 
    // Amplitude of the shake. A larger value shakes the camera harder.
-   public float shakeAmount = 0.7f;
-   public float decreaseFactor = 1.0f;
+   public float InitialShakeAmount;
+   public float InitialCameraField;
+   public float DecreaseFactor;
+
+   private float _currentShakeAmount;
 
    Vector3 originalPos;
+   private float _currentCameraField;
+
+   void Start()
+   {
+      _currentShakeAmount = 0f;
+      _currentCameraField = 60f;
+   }
 
    void Awake()
    {
@@ -28,16 +38,27 @@ public class CameraShake : MonoBehaviour
 
    void Update()
    {
-      if (shakeAmount > 0.05)
+      if (_currentShakeAmount > 0.05)
       {
          if(Time.frameCount % 4 == 0)
-            camTransform.localPosition = originalPos + Random.insideUnitSphere * shakeAmount;
+            camTransform.localPosition = originalPos + Random.insideUnitSphere * _currentShakeAmount;
 
-         shakeAmount -= Time.deltaTime * decreaseFactor;
+         _currentShakeAmount -= Time.deltaTime * DecreaseFactor;
+         _currentCameraField = InitialCameraField - (InitialCameraField - 50f)*_currentShakeAmount;
+         FindObjectOfType<Camera>().fieldOfView = _currentCameraField;
+         
       }
       else
       {
          camTransform.localPosition = originalPos;
+         FindObjectOfType<Camera>().fieldOfView = InitialCameraField;
       }
+   }
+
+   public void StartShaking()
+   {
+      Debug.Log("Start shaking!!!!!!!!!!");
+      _currentShakeAmount = InitialShakeAmount;
+      _currentCameraField = 50f;
    }
 }
