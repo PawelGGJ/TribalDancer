@@ -14,6 +14,7 @@ public class DancerController : MonoBehaviour
     [SerializeField] GameObject ldP;
     [SerializeField] GameObject lP;
     [SerializeField] GameObject cP;
+    [SerializeField] GameObject standingChar;
 
    private Vector2 _leftUpPosition;
    private Vector2 _upPosition;
@@ -28,10 +29,14 @@ public class DancerController : MonoBehaviour
    private Vector2 _lastDancerTilePosition;
 
    private GameObject _lastAnimation;
+   private bool hasMoved;
 
 	// Use this for initialization
 	void Start ()
 	{
+        standingChar.SetActive(true);
+        hasMoved = false;
+
         _leftUpPosition = luP.transform.position;
       _upPosition = uP.transform.position;
       _rightUpPosition = ruP.transform.position;
@@ -49,31 +54,66 @@ public class DancerController : MonoBehaviour
 	void Update ()
 	{
         if (!BeatEngine.instance.instructMode) {
-            if (Input.GetButtonDown("DPDown") || Input.GetKeyDown(KeyCode.DownArrow))
+            if (Input.GetButtonDown("DPDown") || Input.GetKeyDown(KeyCode.DownArrow)) {
                 MoveTo(_downPosition);
-            if (Input.GetButtonDown("DPLeft") || Input.GetKeyDown(KeyCode.LeftArrow))
+                hasMoved = true;
+                if (standingChar) standingChar.SetActive(false);
+            }
+            if (Input.GetButtonDown("DPLeft") || Input.GetKeyDown(KeyCode.LeftArrow)) {
                 MoveTo(_leftPosition);
-            if (Input.GetButtonDown("DPRight") || Input.GetKeyDown(KeyCode.RightArrow))
+                hasMoved = true;
+                if (standingChar) standingChar.SetActive(false);
+            }
+            if (Input.GetButtonDown("DPRight") || Input.GetKeyDown(KeyCode.RightArrow)) { 
                 MoveTo(_rightPosition);
-            if (Input.GetButtonDown("DPUp") || Input.GetKeyDown(KeyCode.UpArrow))
+                hasMoved = true;
+                if (standingChar) standingChar.SetActive(false);
+            }
+            if (Input.GetButtonDown("DPUp") || Input.GetKeyDown(KeyCode.UpArrow)) {
                 MoveTo(_upPosition);
-            if (Input.GetButtonDown("DPX") || Input.GetKeyDown(KeyCode.Q))
+                hasMoved = true;
+                if (standingChar) standingChar.SetActive(false);
+            }
+            if (Input.GetButtonDown("DPX") || Input.GetKeyDown(KeyCode.Q)) {
                 MoveTo(_leftUpPosition);
-            if (Input.GetButtonDown("DPO") || Input.GetKeyDown(KeyCode.E))
+                hasMoved = true;
+                if (standingChar) standingChar.SetActive(false);
+            }
+            if (Input.GetButtonDown("DPO") || Input.GetKeyDown(KeyCode.E)) {
                 MoveTo(_rightUpPosition);
-            if (Input.GetButtonDown("DPT") || Input.GetKeyDown(KeyCode.Z))
+                hasMoved = true;
+                if (standingChar) standingChar.SetActive(false);
+            }
+            if (Input.GetButtonDown("DPT") || Input.GetKeyDown(KeyCode.Z)) {
                 MoveTo(_leftDownPosition);
-            if (Input.GetButtonDown("DPS") || Input.GetKeyDown(KeyCode.C))
+                hasMoved = true;
+                if (standingChar) standingChar.SetActive(false);
+            }
+            if (Input.GetButtonDown("DPS") || Input.GetKeyDown(KeyCode.C)) {
                 MoveTo(_rightDownPosition);
+                hasMoved = true;
+                if (standingChar) standingChar.SetActive(false);
+            }
+        } else if (hasMoved) {
+            StartCoroutine(destroyClone());
+            MoveTo(_centerPosition);
+            hasMoved = false;
+            if (standingChar) {
+                standingChar.SetActive(true);
+            }
         }
 	}
+    private IEnumerator destroyClone() {
+        yield return new WaitForSeconds(0.05f);
+        Destroy(_lastAnimation.gameObject);
+    }
 
    private void MoveTo(Vector2 targetPosition)
    {
-      Debug.Log("source" + _lastDancerTilePosition);
-      Debug.Log("target" + targetPosition);
+      //Debug.Log("source" + _lastDancerTilePosition);
+      //Debug.Log("target" + targetPosition);
       string animationType = GetAnimation(_lastDancerTilePosition, targetPosition);
-      Debug.Log(animationType);
+      //Debug.Log(animationType);
       var animation = Instantiate(Resources.Load(@"Prefabs/DancerMoves/" + animationType)) as GameObject;
       animation.transform.position = _lastDancerTilePosition;
       animation.GetComponent<DancerMoveInstance>().InitialPosition = _lastDancerTilePosition;
@@ -94,7 +134,7 @@ public class DancerController : MonoBehaviour
       double degrees = Math.Acos(-direction.x) * (-direction.y > 0 ? 1 : -1) + Mathf.PI;
 
       //return "RightDown";
-      Debug.Log((degrees + " degress.\n"));
+      //Debug.Log((degrees + " degress.\n"));
       if (22.5/ 180f * Mathf.PI <= degrees && degrees <= 67.5/ 180f * Mathf.PI)
          return "RightUp";
       if (67.5/ 180f * Mathf.PI <= degrees && degrees <= 112.5/ 180f * Mathf.PI)
