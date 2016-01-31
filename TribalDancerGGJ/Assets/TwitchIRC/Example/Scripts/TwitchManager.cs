@@ -13,7 +13,7 @@ public class TwitchManager : MonoBehaviour
    public string TokenText;
    public string ChannelText;
 
-   private List<Watcher> _watchers; 
+   private List<Watcher> _watchers;
 
    public List<Watcher> Watchers { get { return _watchers; } } 
 

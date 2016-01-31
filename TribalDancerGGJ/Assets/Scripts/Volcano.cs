@@ -5,7 +5,7 @@ namespace Assets.Scripts
 {
    public class Volcano : MonoBehaviour
    {
-      public Watcher Destroyee;
+      public GameObject Destroyee;
       public DateTime DestructionTime;
 
       void Update()
