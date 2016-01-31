@@ -3,10 +3,10 @@ using System.Collections;
 using UnityEngine.UI;
 using System;
 using System.Collections.Generic;
+using Object = UnityEngine.Object;
 
-public class TimerTest : MonoBehaviour
+public class BeatEngine : MonoBehaviour
 {
-
    [SerializeField]
    AudioSource theSong;
    [SerializeField]
@@ -51,7 +51,6 @@ public class TimerTest : MonoBehaviour
    [SerializeField]
    Text theScore;
    [SerializeField]
-   Text hitMiss;
    private int currPoints;
    private bool instructMode;
    private Vector3 hmTop;
@@ -67,15 +66,11 @@ public class TimerTest : MonoBehaviour
       currDifficulty = 0;
       seqPlayed = 0;
       requestText.transform.position += new Vector3(20f, 0f, 0f);
-      hmTop = hitMiss.transform.position + new Vector3(0f, 20f, 0f);
-      hmBot = hitMiss.transform.position - new Vector3(0f, 20f, 0f);
       realTimer = 0;
       microTimer = 0;
       readyGo.enabled = true;
       requestText.enabled = false;
-      hitMiss.enabled = false;
       readyGo.text = "Ready?";
-      hitMiss.text = "GO!";
       for (int i = 0; i < 4; i++)
       { //initial sequence of 4 individual buttons
          beatSequence1[i] = 0;
@@ -97,6 +92,12 @@ public class TimerTest : MonoBehaviour
 
    void Update()
    {
+      if (Input.GetKeyDown(KeyCode.A))
+      {
+         var perfect = Instantiate(Resources.Load("Perfect", typeof(GameObject))) as GameObject;
+         perfect.transform.position = new Vector2(4, 4);
+      }
+
       if (!theSong.isPlaying)
       { //if the song is finished - start it again, reset realTimer, and prepare to reset microTimer
          theSong.Play();
@@ -144,16 +145,7 @@ public class TimerTest : MonoBehaviour
             resetMicro = false;
             if (!instructMode && !hasMatched)
             {
-               hitMiss.text = "Miss4";
-               if (beatCounter % 2 == 0)
-               {
-                  hitMiss.transform.position = hmTop;
-               }
-               else
-               {
-                  hitMiss.transform.position = hmBot;
-               }
-               Debug.Log("Miss4");
+               SpawnIndicator("Miss");
                //currPoints -= 1;
                if (currPoints < 0) currPoints = 0;
                theScore.text = "Score : " + currPoints;
@@ -169,10 +161,6 @@ public class TimerTest : MonoBehaviour
                requestText.enabled = true;
                requestText.transform.position += new Vector3(20f, 0f, 0f);
             }
-            else
-            {
-               hitMiss.enabled = true;
-            }
             Debug.Log("Instructions: " + instructMode);
             Debug.Log("Sequence: " + beatSequence1[0] + " " + beatSequence1[1] + " " + beatSequence1[2] + " " + beatSequence1[3]);
             beatCounter = 0;
@@ -180,11 +168,11 @@ public class TimerTest : MonoBehaviour
 
          microTimer = (DateTime.Now - microStartTime).Seconds * 1000 + (DateTime.Now - microStartTime).Milliseconds; //calculate microtimer
 
-         if (theFrame.enabled == false && microTimer % 500 >= goodHitx2)
+         if (microTimer % 500 >= 150 && microTimer % 500 < 250)
          { //light up the frame during the perfect time
             theFrame.enabled = true;
          }
-         else if (theFrame.enabled == true && microTimer % 500 >= goodHitx2 + perfectHit)
+         else
          {
             theFrame.enabled = false;
          }
@@ -207,8 +195,6 @@ public class TimerTest : MonoBehaviour
             }
             else if (microTimer > timePerBeat && !microStep1)
             {
-               hitMiss.enabled = false;
-               hitMiss.text = "GO!";
                microStep1 = true;
                requestText.transform.position -= new Vector3(20f, 0f, 0f);
                danceRequest(beatSequence1[beatCounter]);
@@ -264,16 +250,7 @@ public class TimerTest : MonoBehaviour
                microStep3 = true;
                if (!hasMatched)
                {
-                  hitMiss.text = "Miss3";
-                  Debug.Log("Miss3");
-                  if (beatCounter % 2 == 0)
-                  {
-                     hitMiss.transform.position = hmTop;
-                  }
-                  else
-                  {
-                     hitMiss.transform.position = hmBot;
-                  }
+                  SpawnIndicator("Miss");
                   //currPoints -= 1;
                   if (currPoints < 0) currPoints = 0;
                   theScore.text = "Score : " + currPoints;
@@ -286,16 +263,9 @@ public class TimerTest : MonoBehaviour
                microStep2 = true;
                if (!hasMatched)
                {
-                  hitMiss.text = "Miss2";
-                  Debug.Log("Miss2");
-                  if (beatCounter % 2 == 0)
-                  {
-                     hitMiss.transform.position = hmTop;
-                  }
-                  else
-                  {
-                     hitMiss.transform.position = hmBot;
-                  }
+
+                  SpawnIndicator("Miss");
+                  
                   //currPoints -= 1;
                   if (currPoints < 0) currPoints = 0;
                   theScore.text = "Score : " + currPoints;
@@ -308,16 +278,7 @@ public class TimerTest : MonoBehaviour
                microStep1 = true;
                if (!hasMatched)
                {
-                  hitMiss.text = "Miss1";
-                  Debug.Log("Miss1");
-                  if (beatCounter % 2 == 0)
-                  {
-                     hitMiss.transform.position = hmTop;
-                  }
-                  else
-                  {
-                     hitMiss.transform.position = hmBot;
-                  }
+                  SpawnIndicator("Miss");
                   //currPoints -= 1;
                   if (currPoints < 0) currPoints = 0;
                   theScore.text = "Score : " + currPoints;
@@ -334,40 +295,34 @@ public class TimerTest : MonoBehaviour
    { //checks hit accuracy and updates score
       if (microTimer % 500 < goodHitx2)
       {
-         hitMiss.text = "Good";
-         Debug.Log("Good");
+         SpawnIndicator("Good");
          currPoints += 3;
          theScore.text = "Score : " + currPoints;
       }
       else if (microTimer % 500 < goodHitx2 + perfectHit)
       {
-         hitMiss.text = "Perfect";
-         Debug.Log("Perfect");
+         SpawnIndicator("Perfect");
          currPoints += 5;
          theScore.text = "Score : " + currPoints;
       }
       else if (microTimer % 500 < goodHitx2 * 2 + perfectHit)
       {
-         Debug.Log("Good");
-         hitMiss.text = "Good";
+         SpawnIndicator("Good");
          currPoints += 3;
          theScore.text = "Score : " + currPoints;
       }
       else
       {
-         hitMiss.text = "Bad";
-         Debug.Log("Bad");
+         SpawnIndicator("Bad");
          currPoints += 1;
          theScore.text = "Score : " + currPoints;
       }
-      if (beatCounter % 2 == 0)
-      {
-         hitMiss.transform.position = hmTop;
-      }
-      else
-      {
-         hitMiss.transform.position = hmBot;
-      }
+   }
+
+   private static void SpawnIndicator(string prefabName)
+   {
+      var indicator = Instantiate(Resources.Load(@"Prefabs/" + prefabName)) as GameObject;
+      indicator.transform.position = new Vector2(-0.44f, -3.21f);
    }
 
    void nextSeq()
@@ -379,7 +334,7 @@ public class TimerTest : MonoBehaviour
       }
       else
       {
-         currDifficulty = 8;
+         currDifficulty = symbolsPerDifficulty.Count - 1;
       }
       for (int i = 0; i < 4; i++)
       { //initial sequence of 4 individual buttons
