@@ -8,7 +8,7 @@ public class Watcher : MonoBehaviour
    private readonly IDictionary<SpeechType, Curse> _cursesToSpeechTypes = new Dictionary<SpeechType, Curse>
    {
       {SpeechType.Blood, Curse.Blood},
-      {SpeechType.Speed, Curse.Speed},
+      {SpeechType.Flip, Curse.Flip},
       {SpeechType.Quake, Curse.Quake},
    };
 
@@ -42,19 +42,13 @@ public class Watcher : MonoBehaviour
    private SpeechType DetectSpeechType(string message)
    {
       string messageLower = message.ToLower();
-      if (messageLower.Contains("a"))
-         return SpeechType.Blood;
-      if (messageLower.Contains("s"))
-         return SpeechType.Quake;
-      if (messageLower.Contains("l"))
-         return SpeechType.Blood;
-      if (messageLower.Contains("boo"))
-         return SpeechType.Stone;
 
-      if (messageLower.Contains("nice"))
-         return SpeechType.Flower;
-      if (messageLower.Contains("good"))
-         return SpeechType.Flower;
+      if (messageLower.Contains("blood"))
+         return SpeechType.Blood;
+      if (messageLower.Contains("quake"))
+         return SpeechType.Quake;
+      if (messageLower.Contains("chaos"))
+         return SpeechType.Flip;
 
       return SpeechType.Undefined;
    }

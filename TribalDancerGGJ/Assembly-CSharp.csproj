@@ -52,6 +52,7 @@
      <Compile Include="Assets\Fog.cs" />
      <Compile Include="Assets\Perfectspawner.cs" />
      <Compile Include="Assets\Scripts\BeatEngine.cs" />
+     <Compile Include="Assets\Scripts\CameraFlip.cs" />
      <Compile Include="Assets\Scripts\CameraShake.cs" />
      <Compile Include="Assets\Scripts\CurseManager.cs" />
      <Compile Include="Assets\Scripts\DancerController.cs" />

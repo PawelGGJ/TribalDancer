@@ -7,7 +7,7 @@ using System.Collections;
 public enum Curse
 {
    Blood,
-   Speed,
+   Flip,
    Quake
 }
 
@@ -26,7 +26,7 @@ public class VoteManager : MonoBehaviour
       return new Dictionary<Curse, int>
       {
          {Curse.Blood, 0},
-         {Curse.Speed, 0},
+         {Curse.Flip, 0},
          {Curse.Quake, 0},
       };
    }
