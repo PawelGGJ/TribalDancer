@@ -1,0 +1,258 @@
+fileFormatVersion: 2
+guid: f322293b60075eb46972e86b615652d8
+timeCreated: 1454204041
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Dancer Idle_0
+    21300002: Dancer Idle_1
+    21300004: Dancer Idle_2
+    21300006: Dancer Idle_3
+    21300008: Dancer Idle_4
+    21300010: Dancer Idle_5
+    21300012: Dancer Idle_6
+    21300014: Dancer Idle_7
+    21300016: Dancer Idle_8
+    21300018: Dancer Idle_9
+    21300020: Dancer Idle_10
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Dancer Idle_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28, y: 67}
+        - {x: -28, y: -79}
+        - {x: 28, y: -79}
+        - {x: 28, y: 37}
+        - {x: 13, y: 67}
+    - name: Dancer Idle_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28, y: 67}
+        - {x: -28, y: -79}
+        - {x: 23, y: -79}
+        - {x: 28, y: -77}
+        - {x: 28, y: 37}
+        - {x: 10, y: 67}
+    - name: Dancer Idle_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9, y: 67}
+        - {x: -33, y: 50}
+        - {x: -33, y: -79}
+        - {x: 28, y: -79}
+        - {x: 28, y: 41}
+        - {x: 16, y: 67}
+    - name: Dancer Idle_3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7, y: 67}
+        - {x: -34, y: 49}
+        - {x: -34, y: -43}
+        - {x: -33, y: -79}
+        - {x: 29, y: -79}
+        - {x: 29, y: 38}
+        - {x: 14, y: 67}
+    - name: Dancer Idle_4
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -31, y: 67}
+        - {x: -31, y: -79}
+        - {x: 28, y: -79}
+        - {x: 28, y: 64}
+        - {x: 17, y: 67}
+    - name: Dancer Idle_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28, y: 68}
+        - {x: -28, y: -78}
+        - {x: 28, y: -78}
+        - {x: 28, y: 52}
+        - {x: 26, y: 68}
+    - name: Dancer Idle_6
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -30, y: 68}
+        - {x: -31, y: 67}
+        - {x: -31, y: -57}
+        - {x: -30, y: -70}
+        - {x: -21, y: -78}
+        - {x: 24, y: -78}
+        - {x: 28, y: -77}
+        - {x: 28, y: 50}
+        - {x: 11, y: 68}
+    - name: Dancer Idle_7
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 68}
+        - {x: -36, y: 52}
+        - {x: -36, y: -58}
+        - {x: -33, y: -78}
+        - {x: 28, y: -78}
+        - {x: 28, y: 40}
+        - {x: 13, y: 68}
+    - name: Dancer Idle_8
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: 68}
+        - {x: -32, y: 42}
+        - {x: -32, y: -78}
+        - {x: 29, y: -78}
+        - {x: 29, y: 38}
+        - {x: 11, y: 68}
+    - name: Dancer Idle_9
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10, y: 68}
+        - {x: -13, y: 68}
+        - {x: -28, y: 40}
+        - {x: -28, y: -78}
+        - {x: 23, y: -78}
+        - {x: 28, y: -76}
+        - {x: 28, y: 34}
+        - {x: 23, y: 59}
+    - name: Dancer Idle_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28, y: 69}
+        - {x: -28, y: -77}
+        - {x: 28, y: -77}
+        - {x: 28, y: 39}
+        - {x: 13, y: 69}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

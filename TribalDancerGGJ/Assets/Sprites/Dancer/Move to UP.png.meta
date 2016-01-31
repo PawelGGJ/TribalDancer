@@ -1,0 +1,113 @@
+fileFormatVersion: 2
+guid: 5fe5f4a3f3ba89a47af896667891190f
+timeCreated: 1454209602
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Move to UP_0
+    21300002: Move to UP_1
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Move to UP_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5, y: 90}
+        - {x: -33, y: 51}
+        - {x: -37, y: 40}
+        - {x: -37, y: 36}
+        - {x: -29, y: 28}
+        - {x: -26, y: 29}
+        - {x: -36, y: 25}
+        - {x: -37, y: 20}
+        - {x: -37, y: -8}
+        - {x: -35, y: -16}
+        - {x: -26, y: -23}
+        - {x: -23, y: -20}
+        - {x: -23, y: -15}
+        - {x: -26, y: -12}
+        - {x: -24, y: -10}
+        - {x: -24, y: -13}
+        - {x: -22, y: -15}
+        - {x: -22, y: -23}
+        - {x: -1, y: -124}
+        - {x: 72, y: -124}
+        - {x: 72, y: 63}
+        - {x: 26, y: 90}
+    - name: Move to UP_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 31, y: 90}
+        - {x: 0, y: 90}
+        - {x: -35, y: 49}
+        - {x: -35, y: 18}
+        - {x: -31, y: 12}
+        - {x: 15, y: -38}
+        - {x: 34, y: -38}
+        - {x: 71, y: 18}
+        - {x: 71, y: 59}
+        - {x: 62, y: 70}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

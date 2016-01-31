@@ -12,11 +12,8 @@ public class PerfectSpawner2 : MonoBehaviour {
 	void Update () {
       if (Input.GetKey(KeyCode.Space))
       {
-         
-         Debug.Log("!!!1111111111!!!!");
          var perfect = Instantiate(Resources.Load(@"Prefabs/Perfect")) as GameObject;
          perfect.transform.position = new Vector2(-3.21f, -3.21f);
-         Debug.Log("!!!!!!!!!!!!!!!!!");
       }
 	}
 }

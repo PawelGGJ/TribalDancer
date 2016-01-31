@@ -53,6 +53,8 @@
      <Compile Include="Assets\Scripts\BeatEngine.cs" />
      <Compile Include="Assets\Scripts\CameraShake.cs" />
      <Compile Include="Assets\Scripts\CurseManager.cs" />
+     <Compile Include="Assets\Scripts\DancerController.cs" />
+     <Compile Include="Assets\Scripts\DancerMoveInstance.cs" />
      <Compile Include="Assets\Scripts\GameManagement.cs" />
      <Compile Include="Assets\Scripts\HitIndicator.cs" />
      <Compile Include="Assets\Scripts\PerfectSpawner2.cs" />
