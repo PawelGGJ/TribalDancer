@@ -54,6 +54,9 @@ public class DancerController : MonoBehaviour
 	void Update ()
 	{
         if (!BeatEngine.instance.instructMode) {
+            if (Input.GetKeyDown(KeyCode.Escape)) {
+                GameManagement.instance.LoadScene("MainMenu");
+            }
             if (Input.GetButtonDown("DPDown") || Input.GetKeyDown(KeyCode.X)) {
                 MoveTo(_downPosition);
                 hasMoved = true;

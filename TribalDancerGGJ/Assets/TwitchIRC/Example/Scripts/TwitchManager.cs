@@ -33,6 +33,7 @@ public class TwitchManager : MonoBehaviour
    {
       TwitchIrc.Instance.Username = UsernameText;
       TwitchIrc.Instance.OauthToken = TokenText;
+      ChannelText = GameManagement.instance.getChannelName();
       TwitchIrc.Instance.Channel = ChannelText;
 
       TwitchIrc.Instance.Connect();

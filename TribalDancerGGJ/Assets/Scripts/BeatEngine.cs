@@ -9,9 +9,8 @@ using Object = UnityEngine.Object;
 public class BeatEngine : MonoBehaviour
 {
 
-    public static BeatEngine instance;
-   [SerializeField]
-   AudioSource theSong;
+   public static BeatEngine instance;
+   public AudioSource theSong;
    [SerializeField]
    Image theFrame;
    [Range(1f, 1999f)]
@@ -51,6 +50,8 @@ public class BeatEngine : MonoBehaviour
    AudioSource combo3;
    [SerializeField]
    AudioSource combo4;
+   [SerializeField]
+   AudioSource switchSound;
 
    private GameObject currentlyVisible;
 
@@ -2162,12 +2163,14 @@ public class BeatEngine : MonoBehaviour
                Object.FindObjectOfType<MissManager>().Miss();
                SpawnIndicator("Miss");
                comboCntr = 0;
+               currReachedCombo = 0;
                bonusPts = 1;
                if (currPoints < 0) currPoints = 0;
                theScore.text = "Score : " + currPoints;
             }
             hasMatched = false;
             instructMode = !instructMode;
+            switchSound.Play();
             if (instructMode)
             {
                theFrame.color = new Color(255f, 255f, 255f, theFrame.color.a); 
@@ -2276,6 +2279,7 @@ public class BeatEngine : MonoBehaviour
                   Object.FindObjectOfType<MissManager>().Miss();
                    SpawnIndicator("Miss");
                    comboCntr = 0;
+                   currReachedCombo = 0;
                    bonusPts = 1;
                   if (currPoints < 0) currPoints = 0;
                   theScore.text = "Score : " + currPoints;
@@ -2291,6 +2295,7 @@ public class BeatEngine : MonoBehaviour
                   Object.FindObjectOfType<MissManager>().Miss();
                    SpawnIndicator("Miss");
                    comboCntr = 0;
+                   currReachedCombo = 0;
                    bonusPts = 1;
                   if (currPoints < 0) currPoints = 0;
                   theScore.text = "Score : " + currPoints;
@@ -2306,6 +2311,7 @@ public class BeatEngine : MonoBehaviour
                   FindObjectOfType<MissManager>().Miss();
                    SpawnIndicator("Miss");
                    comboCntr = 0;
+                   currReachedCombo = 0;
                    bonusPts = 1;
                   if (currPoints < 0) currPoints = 0;
                   theScore.text = "Score : " + currPoints;

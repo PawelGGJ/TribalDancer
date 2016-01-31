@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Threading;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using Object = UnityEngine.Object;
 using Random = System.Random;
 
@@ -46,7 +45,7 @@ namespace Assets.Scripts
       public IEnumerator WaitAndReload()
       {
          yield return new WaitForSeconds(1.0f);
-         SceneManager.LoadScene("2d");
+         GameManagement.instance.LoadScene("MainMenu");
       }
    }
 }

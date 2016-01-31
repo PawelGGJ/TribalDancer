@@ -252,6 +252,7 @@ public class TwitchIrc : MonoBehaviour
         Instance = this;
 
         OnConnected += OnConnectedToServer;
+        Channel = GameManagement.instance.getChannelName();
 
         if (ConnectOnAwake)
             Connect();
