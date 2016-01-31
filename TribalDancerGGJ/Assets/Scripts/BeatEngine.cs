@@ -11,11 +11,38 @@ public class BeatEngine : MonoBehaviour
    AudioSource theSong;
    [SerializeField]
    Image theFrame;
-   [SerializeField]
-   Text readyGo;
    [Range(1f, 1999f)]
    [SerializeField]
    float offsetMillsec = 400f; //number must be between 0 and 2000
+   [SerializeField]
+   Image preparationImage;
+   [SerializeField]
+   Sprite pic1;
+   [SerializeField]
+   Sprite pic2;
+   [SerializeField]
+   Sprite pic3;
+   [SerializeField]
+   Sprite pic4;
+   [SerializeField]
+   GameObject symbol0;
+   [SerializeField]
+   GameObject symbol1;
+   [SerializeField]
+   GameObject symbol2;
+   [SerializeField]
+   GameObject symbol3;
+   [SerializeField]
+   GameObject symbol4;
+   [SerializeField]
+   GameObject symbol5;
+   [SerializeField]
+   GameObject symbol6;
+   [SerializeField]
+   GameObject symbol7;
+
+   private GameObject currentlyVisible;
+
    bool startDancing;
    int realTimer;
    float microTimer;
@@ -35,22 +62,11 @@ public class BeatEngine : MonoBehaviour
 
    bool hasMatched;
 
-   [SerializeField]
-   Text requestText;
    private int[] beatSequence1 = new int[4];
    private int beatCounter;
-   private string reqL = "Left";
-   private string reqR = "Right";
-   private string reqU = "Up";
-   private string reqD = "Down";
-   private string reqX = "X";
-   private string reqO = "O";
-   private string reqS = "Square";
-   private string reqT = "Triangle";
 
    [SerializeField]
    Text theScore;
-   [SerializeField]
    private int currPoints;
    private bool instructMode;
    private Vector3 hmTop;
@@ -65,19 +81,21 @@ public class BeatEngine : MonoBehaviour
    {
       currDifficulty = 0;
       seqPlayed = 0;
-      requestText.transform.position += new Vector3(20f, 0f, 0f);
       realTimer = 0;
       microTimer = 0;
-      readyGo.enabled = true;
-      requestText.enabled = false;
-      readyGo.text = "Ready?";
+      symbol0.SetActive(false);
+      symbol1.SetActive(false);
+      symbol2.SetActive(false);
+      symbol3.SetActive(false);
+      symbol4.SetActive(false);
+      symbol5.SetActive(false);
+      symbol6.SetActive(false);
+      symbol7.SetActive(false);
       for (int i = 0; i < 4; i++)
       { //initial sequence of 4 individual buttons
          beatSequence1[i] = 0;
       }
-      Debug.Log("Sequence: " + beatSequence1[0] + " " + beatSequence1[1] + " " + beatSequence1[2] + " " + beatSequence1[3]);
       beatCounter = 0;
-      danceRequest(beatSequence1[beatCounter]);
       theSong.Play();
       setAccDifficulty(1);
       startDancing = false;
@@ -87,17 +105,12 @@ public class BeatEngine : MonoBehaviour
       microStep2 = false;
       microStep3 = false;
       currPoints = 0;
+      preparationImage.sprite = pic1;
       startTime = DateTime.Now;
    }
 
    void Update()
    {
-      if (Input.GetKeyDown(KeyCode.A))
-      {
-         var perfect = Instantiate(Resources.Load("Perfect", typeof(GameObject))) as GameObject;
-         perfect.transform.position = new Vector2(4, 4);
-      }
-
       if (!theSong.isPlaying)
       { //if the song is finished - start it again, reset realTimer, and prepare to reset microTimer
          theSong.Play();
@@ -106,28 +119,29 @@ public class BeatEngine : MonoBehaviour
       }
       realTimer = (DateTime.Now - startTime).Seconds * 1000 + (DateTime.Now - startTime).Milliseconds; //calculate realTimer
 
-      if (instructMode && resetMicro && realTimer > offsetMillsec / 2) requestText.enabled = false; //make the last message disappear a bit early from the instruction)
-
       if (!startDancing)
       { //before the game starts
 
          if (realTimer > offsetMillsec + 2000f)
          { //if the song has played once and the time of the offset has passed begin playing
             startDancing = true;
-            readyGo.enabled = false;
             danceRequest(beatSequence1[beatCounter]);
-            requestText.enabled = true;
             instructMode = true;
+            preparationImage.enabled = false;
             microStartTime = DateTime.Now;
             resetMicro = false;
          }
-         else if (realTimer > offsetMillsec + 1300f)
+         else if (realTimer > offsetMillsec + 1400f)
          { //change sign
-            readyGo.text = "Go!";
+             preparationImage.sprite = pic4;
          }
-         else if (realTimer > offsetMillsec + 700f)
+         else if (realTimer > offsetMillsec + 800f)
          { //change sign
-            readyGo.text = "Set!";
+             preparationImage.sprite = pic3;
+         }
+         else if (realTimer > offsetMillsec + 200f)
+         { //change sign
+            preparationImage.sprite = pic2;
          }
 
       }
@@ -157,12 +171,12 @@ public class BeatEngine : MonoBehaviour
                seqPlayed++;
                currDifficulty = seqPlayed / 4;
                nextSeq();
+               danceRequest(beatSequence1[beatCounter]);
                Debug.Log("seqPlayed " + seqPlayed + " Curr Diff: " + currDifficulty);
-               requestText.enabled = true;
-               requestText.transform.position += new Vector3(20f, 0f, 0f);
+            } else {
+                if (currentlyVisible) currentlyVisible.SetActive(false);
+                currentlyVisible = null;
             }
-            Debug.Log("Instructions: " + instructMode);
-            Debug.Log("Sequence: " + beatSequence1[0] + " " + beatSequence1[1] + " " + beatSequence1[2] + " " + beatSequence1[3]);
             beatCounter = 0;
          }
 
@@ -182,21 +196,18 @@ public class BeatEngine : MonoBehaviour
             if (microTimer > 3 * timePerBeat && !microStep3)
             {
                microStep3 = true;
-               requestText.transform.position -= new Vector3(20f, 0f, 0f);
                danceRequest(beatSequence1[beatCounter]);
                beatCounter = 3;
             }
             else if (microTimer > 2 * timePerBeat && !microStep2)
             {
                microStep2 = true;
-               requestText.transform.position += new Vector3(20f, 0f, 0f);
                danceRequest(beatSequence1[beatCounter]);
                beatCounter = 2;
             }
             else if (microTimer > timePerBeat && !microStep1)
             {
                microStep1 = true;
-               requestText.transform.position -= new Vector3(20f, 0f, 0f);
                danceRequest(beatSequence1[beatCounter]);
                beatCounter = 1;
             }
@@ -206,43 +217,43 @@ public class BeatEngine : MonoBehaviour
          {
             if (Input.GetButtonDown("DPLeft") && beatSequence1[beatCounter] == 0 && !hasMatched)
             { //check if L is pressed, is correct & not double counted
-               checkAccuracy();
-               hasMatched = true;
+                hasMatched = true;
+                checkAccuracy(microTimer);
             }
             if (Input.GetButtonDown("DPRight") && beatSequence1[beatCounter] == 1 && !hasMatched)
             { //check if R is pressed, is correct & not double counted
-               checkAccuracy();
-               hasMatched = true;
+                hasMatched = true;
+                checkAccuracy(microTimer);
             }
             if (Input.GetButtonDown("DPUp") && beatSequence1[beatCounter] == 2 && !hasMatched)
             { //check if U is pressed, is correct & not double counted
-               checkAccuracy();
-               hasMatched = true;
+                hasMatched = true;
+                checkAccuracy(microTimer);
             }
             if (Input.GetButtonDown("DPDown") && beatSequence1[beatCounter] == 3 && !hasMatched)
             { //check if D is pressed, is correct & not double counted
-               checkAccuracy();
-               hasMatched = true;
+                hasMatched = true;
+                checkAccuracy(microTimer);
             }
             if (Input.GetButtonDown("DPX") && beatSequence1[beatCounter] == 4 && !hasMatched)
             { //check if X is pressed, is correct & not double counted
-               checkAccuracy();
-               hasMatched = true;
+                hasMatched = true;
+                checkAccuracy(microTimer);
             }
             if (Input.GetButtonDown("DPO") && beatSequence1[beatCounter] == 5 && !hasMatched)
             { //check if O is pressed, is correct & not double counted
-               checkAccuracy();
-               hasMatched = true;
+                hasMatched = true;
+                checkAccuracy(microTimer);
             }
             if (Input.GetButtonDown("DPS") && beatSequence1[beatCounter] == 6 && !hasMatched)
             { //check if S is pressed, is correct & not double counted
-               checkAccuracy();
-               hasMatched = true;
+                hasMatched = true;
+                checkAccuracy(microTimer);
             }
             if (Input.GetButtonDown("DPT") && beatSequence1[beatCounter] == 7 && !hasMatched)
             { //check if T is pressed, is correct & not double counted
-               checkAccuracy();
-               hasMatched = true;
+                hasMatched = true;
+                checkAccuracy(microTimer);
             }
 
             if (microTimer > 3 * timePerBeat && !microStep3)
@@ -265,7 +276,6 @@ public class BeatEngine : MonoBehaviour
                {
 
                   SpawnIndicator("Miss");
-                  
                   //currPoints -= 1;
                   if (currPoints < 0) currPoints = 0;
                   theScore.text = "Score : " + currPoints;
@@ -291,27 +301,25 @@ public class BeatEngine : MonoBehaviour
       }
    }
 
-   void checkAccuracy()
+   void checkAccuracy(float milisecs)
    { //checks hit accuracy and updates score
-      if (microTimer % 500 < goodHitx2)
+       milisecs = microTimer % 500;
+       if (milisecs < goodHitx2)
       {
          SpawnIndicator("Good");
          currPoints += 3;
          theScore.text = "Score : " + currPoints;
-      }
-      else if (microTimer % 500 < goodHitx2 + perfectHit)
+      } else if (milisecs < goodHitx2 + perfectHit)
       {
          SpawnIndicator("Perfect");
          currPoints += 5;
          theScore.text = "Score : " + currPoints;
-      }
-      else if (microTimer % 500 < goodHitx2 * 2 + perfectHit)
+      } else if (milisecs < goodHitx2 * 2 + perfectHit)
       {
          SpawnIndicator("Good");
          currPoints += 3;
          theScore.text = "Score : " + currPoints;
-      }
-      else
+      } else
       {
          SpawnIndicator("Bad");
          currPoints += 1;
@@ -344,19 +352,36 @@ public class BeatEngine : MonoBehaviour
    }
 
    private void danceRequest(int numb)
-   { //text for god
+   { /*
       switch (numb)
       {
-         case 0: requestText.text = reqL; break;
-         case 1: requestText.text = reqR; break;
-         case 2: requestText.text = reqU; break;
-         case 3: requestText.text = reqD; break;
-         case 4: requestText.text = reqX; break;
-         case 5: requestText.text = reqO; break;
-         case 6: requestText.text = reqS; break;
-         case 7: requestText.text = reqT; break;
-         default: requestText.text = "Relax"; break;
+          case 0: if (currentlyVisible) currentlyVisible.SetActive(false); currentlyVisible = symbol0; symbol0.SetActive(true); break;
+          case 1: if (currentlyVisible) currentlyVisible.SetActive(false); currentlyVisible = symbol1; symbol1.SetActive(true); break;
+          case 2: if (currentlyVisible) currentlyVisible.SetActive(false); currentlyVisible = symbol2; symbol2.SetActive(true); break;
+          case 3: if (currentlyVisible) currentlyVisible.SetActive(false); currentlyVisible = symbol3; symbol3.SetActive(true); break;
+          case 4: if (currentlyVisible) currentlyVisible.SetActive(false); currentlyVisible = symbol4; symbol4.SetActive(true); break;
+          case 5: if (currentlyVisible) currentlyVisible.SetActive(false); currentlyVisible = symbol5; symbol5.SetActive(true); break;
+          case 6: if (currentlyVisible) currentlyVisible.SetActive(false); currentlyVisible = symbol6; symbol6.SetActive(true); break;
+          case 7: if (currentlyVisible) currentlyVisible.SetActive(false); currentlyVisible = symbol7; symbol7.SetActive(true); break;
+          default: if (currentlyVisible) currentlyVisible.SetActive(false); currentlyVisible = symbol0; symbol0.SetActive(true); break;
       }
+      */
+       switch (numb) {
+           case 0: symbol0.SetActive(true); StartCoroutine(lightUpTile(symbol0)); break;
+           case 1: symbol1.SetActive(true); StartCoroutine(lightUpTile(symbol1)); break;
+           case 2: symbol2.SetActive(true); StartCoroutine(lightUpTile(symbol2)); break;
+           case 3: symbol3.SetActive(true); StartCoroutine(lightUpTile(symbol3)); break;
+           case 4: symbol4.SetActive(true); StartCoroutine(lightUpTile(symbol4)); break;
+           case 5: symbol5.SetActive(true); StartCoroutine(lightUpTile(symbol5)); break;
+           case 6: symbol6.SetActive(true); StartCoroutine(lightUpTile(symbol6)); break;
+           case 7: symbol7.SetActive(true); StartCoroutine(lightUpTile(symbol7)); break;
+           default: break;
+      }
+   }
+
+   private IEnumerator lightUpTile(GameObject lightPic) {
+       yield return new WaitForSeconds(0.19f);
+       lightPic.SetActive(false);
    }
 
    void setAccDifficulty(int diff)
