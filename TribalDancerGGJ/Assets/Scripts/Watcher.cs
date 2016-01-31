@@ -43,9 +43,9 @@ public class Watcher : MonoBehaviour
    {
       string messageLower = message.ToLower();
       if (messageLower.Contains("a"))
-         return SpeechType.Quake;
+         return SpeechType.Blood;
       if (messageLower.Contains("s"))
-         return SpeechType.Speed;
+         return SpeechType.Quake;
       if (messageLower.Contains("l"))
          return SpeechType.Blood;
       if (messageLower.Contains("boo"))
