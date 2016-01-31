@@ -35,9 +35,19 @@ public class CurseManager : MonoBehaviour
       if (curse == Curse.Blood)
       {
          _timeToStartCurse = DateTime.UtcNow.AddMilliseconds(3000);
-         _curseAction = () => FindObjectOfType<FogGenerator>().GenerateFogFor(gameSeconds / 12);
+         _curseAction = () => FindObjectOfType<FogGenerator>().GenerateFogFor(gameSeconds / 15 + 5);
       }
-      GameObject.Find("Rivers of Lava").SetActive(true);
+
+      if (curse == Curse.Flip)
+      {
+         _timeToStartCurse = DateTime.UtcNow;
+         _curseAction = () =>
+         {
+            var camera  = FindObjectOfType<CameraFlip>();
+            camera.Flip();
+            camera.TimeToNormality = DateTime.UtcNow.AddSeconds(gameSeconds/15 + 5);
+         };
+      }
   
    }
 }

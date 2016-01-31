@@ -2,7 +2,7 @@ public enum SpeechType
 {
    Undefined,
    Blood,
-   Speed,
+   Flip,
    Quake,
    GodVotingRequest,
    GodVotingResolved,

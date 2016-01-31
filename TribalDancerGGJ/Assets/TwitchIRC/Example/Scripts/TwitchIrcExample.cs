@@ -27,7 +27,7 @@ public class TwitchIrcExample : MonoBehaviour
     {
         TwitchIrc.Instance.Username = UsernameText.text;
         TwitchIrc.Instance.OauthToken = TokenText.text;
-        TwitchIrc.Instance.Channel = ChannelText.text;
+        TwitchIrc.Instance.Channel = ChannelText.text.ToLower();
 
         TwitchIrc.Instance.Connect();
     }

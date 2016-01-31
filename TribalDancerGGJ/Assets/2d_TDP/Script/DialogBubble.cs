@@ -34,7 +34,7 @@ public class DialogBubble : MonoBehaviour {
             vBubble.First().vFontColor = Color.red;
          if (speechType == SpeechType.Quake)
             vBubble.First().vFontColor = Color.yellow;
-         if (speechType == SpeechType.Speed)
+         if (speechType == SpeechType.Flip)
             vBubble.First().vFontColor = Color.cyan;
 
          if (speechType == SpeechType.GodVotingRequest || speechType == SpeechType.GodVotingResolved)
