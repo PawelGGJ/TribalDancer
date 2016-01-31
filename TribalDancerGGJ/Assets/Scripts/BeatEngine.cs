@@ -170,11 +170,11 @@ public class BeatEngine : MonoBehaviour
 
          if (microTimer % 500 >= 150 && microTimer % 500 < 250)
          { //light up the frame during the perfect time
-            theFrame.enabled = true;
+            theFrame.color = new Color(theFrame.color.r, theFrame.color.b, theFrame.color.b, .8f);
          }
          else
          {
-            theFrame.enabled = false;
+            theFrame.color = new Color(theFrame.color.r, theFrame.color.b, theFrame.color.b, 1f);
          }
 
          if (instructMode)
