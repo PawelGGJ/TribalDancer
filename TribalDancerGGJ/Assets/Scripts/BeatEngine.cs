@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using System;
@@ -2148,6 +2149,7 @@ public class BeatEngine : MonoBehaviour
             resetMicro = false;
             if (!instructMode && !hasMatched)
             {
+               Object.FindObjectOfType<MissManager>().Miss();
                SpawnIndicator("Miss");
                comboCntr = 0;
                bonusPts = 1;
@@ -2261,6 +2263,7 @@ public class BeatEngine : MonoBehaviour
                microStep3 = true;
                if (!hasMatched)
                {
+                  Object.FindObjectOfType<MissManager>().Miss();
                    SpawnIndicator("Miss");
                    comboCntr = 0;
                    bonusPts = 1;
@@ -2275,7 +2278,7 @@ public class BeatEngine : MonoBehaviour
                microStep2 = true;
                if (!hasMatched)
                {
-
+                  Object.FindObjectOfType<MissManager>().Miss();
                    SpawnIndicator("Miss");
                    comboCntr = 0;
                    bonusPts = 1;
@@ -2290,6 +2293,7 @@ public class BeatEngine : MonoBehaviour
                microStep1 = true;
                if (!hasMatched)
                {
+                  FindObjectOfType<MissManager>().Miss();
                    SpawnIndicator("Miss");
                    comboCntr = 0;
                    bonusPts = 1;

@@ -15,6 +15,8 @@ public class TwitchManager : MonoBehaviour
 
    private List<Watcher> _watchers; 
 
+   public List<Watcher> Watchers { get { return _watchers; } } 
+
    void Start()
    {
       //Subscribe for events

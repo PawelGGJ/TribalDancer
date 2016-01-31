@@ -100,19 +100,19 @@ public class VoteManager : MonoBehaviour
 	      EndVoting();
 	   }
 
-	   if (Input.GetKeyDown(KeyCode.Space))
-	   {
-	      Debug.Log(GetComponent<Watcher>() != null);
-
-         if (_voting)
-         {
-            EndVoting();
-         }
-         else
-         {
-            StartVoting();
-         }
-	   }
+	  // if (Input.GetKeyDown(KeyCode.Space))
+	  // {
+	  //    Debug.Log(GetComponent<Watcher>() != null);
+     //
+     //    if (_voting)
+     //    {
+     //       EndVoting();
+     //    }
+     //    else
+     //    {
+     //       StartVoting();
+     //    }
+	  // }
 	      
 	}
 }
