@@ -79,7 +79,7 @@ public class DancerController : MonoBehaviour
    {
       Vector2 direction = (targetPosition - sourcePosition).normalized;
       if (targetPosition == sourcePosition)
-         direction = targetPosition;
+         direction = (_centerPosition - targetPosition).normalized;
       double degrees = Math.Acos(-direction.x) * (-direction.y > 0 ? 1 : -1) + Mathf.PI;
 
       //return "RightDown";
