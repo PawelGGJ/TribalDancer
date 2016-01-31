@@ -50,6 +50,7 @@
      <Compile Include="Assets\2d_TDP\Script\PixelBubble.cs" />
      <Compile Include="Assets\2d_TDP\Script\SwitchScene.cs" />
      <Compile Include="Assets\Fog.cs" />
+     <Compile Include="Assets\MainMenuScript.cs" />
      <Compile Include="Assets\Perfectspawner.cs" />
      <Compile Include="Assets\Scripts\BeatEngine.cs" />
      <Compile Include="Assets\Scripts\CameraShake.cs" />

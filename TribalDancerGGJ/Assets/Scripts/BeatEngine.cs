@@ -42,6 +42,14 @@ public class BeatEngine : MonoBehaviour
    GameObject symbol6;
    [SerializeField]
    GameObject symbol7;
+   [SerializeField]
+   AudioSource combo1;
+   [SerializeField]
+   AudioSource combo2;
+   [SerializeField]
+   AudioSource combo3;
+   [SerializeField]
+   AudioSource combo4;
 
    private GameObject currentlyVisible;
 
@@ -85,6 +93,7 @@ public class BeatEngine : MonoBehaviour
    private int bonusPts;
    [SerializeField]
    List<Vector2> comboBonusList = new List<Vector2>();
+   private int currReachedCombo;
 
    int[][] diff0 = {
             new int[] {0,8,0,8},
@@ -2066,6 +2075,7 @@ public class BeatEngine : MonoBehaviour
 
    void Start()
    {
+      currReachedCombo = 0;
       currDifficulty = 0;
       seqPlayed = 0;
       realTimer = 0;
@@ -2212,42 +2222,42 @@ public class BeatEngine : MonoBehaviour
          }
          else
          {
-            if (Input.GetButtonDown("DPLeft") && currBeatSeq[beatCounter] == 0 && !hasMatched)
+             if ((Input.GetButtonDown("DPLeft") || Input.GetKeyDown(KeyCode.A)) && currBeatSeq[beatCounter] == 0 && !hasMatched)
             { //check if L is pressed, is correct & not double counted
                 hasMatched = true;
                 checkAccuracy(microTimer);
             }
-            if (Input.GetButtonDown("DPRight") && currBeatSeq[beatCounter] == 1 && !hasMatched)
+             if ((Input.GetButtonDown("DPRight") || Input.GetKeyDown(KeyCode.D)) && currBeatSeq[beatCounter] == 1 && !hasMatched)
             { //check if R is pressed, is correct & not double counted
                 hasMatched = true;
                 checkAccuracy(microTimer);
             }
-            if (Input.GetButtonDown("DPUp") && currBeatSeq[beatCounter] == 2 && !hasMatched)
+             if ((Input.GetButtonDown("DPUp") || Input.GetKeyDown(KeyCode.W)) && currBeatSeq[beatCounter] == 2 && !hasMatched)
             { //check if U is pressed, is correct & not double counted
                 hasMatched = true;
                 checkAccuracy(microTimer);
             }
-            if (Input.GetButtonDown("DPDown") && currBeatSeq[beatCounter] == 3 && !hasMatched)
+            if ((Input.GetButtonDown("DPDown") || Input.GetKeyDown(KeyCode.X)) && currBeatSeq[beatCounter] == 3 && !hasMatched)
             { //check if D is pressed, is correct & not double counted
                 hasMatched = true;
                 checkAccuracy(microTimer);
             }
-            if (Input.GetButtonDown("DPX") && currBeatSeq[beatCounter] == 4 && !hasMatched)
+            if ((Input.GetButtonDown("DPX") || Input.GetKeyDown(KeyCode.Q)) && currBeatSeq[beatCounter] == 4 && !hasMatched)
             { //check if X is pressed, is correct & not double counted
                 hasMatched = true;
                 checkAccuracy(microTimer);
             }
-            if (Input.GetButtonDown("DPO") && currBeatSeq[beatCounter] == 5 && !hasMatched)
+            if ((Input.GetButtonDown("DPO") || Input.GetKeyDown(KeyCode.E)) && currBeatSeq[beatCounter] == 5 && !hasMatched)
             { //check if O is pressed, is correct & not double counted
                 hasMatched = true;
                 checkAccuracy(microTimer);
             }
-            if (Input.GetButtonDown("DPS") && currBeatSeq[beatCounter] == 6 && !hasMatched)
+            if ((Input.GetButtonDown("DPS") || Input.GetKeyDown(KeyCode.C)) && currBeatSeq[beatCounter] == 6 && !hasMatched)
             { //check if S is pressed, is correct & not double counted
                 hasMatched = true;
                 checkAccuracy(microTimer);
             }
-            if (Input.GetButtonDown("DPT") && currBeatSeq[beatCounter] == 7 && !hasMatched)
+            if ((Input.GetButtonDown("DPT") || Input.GetKeyDown(KeyCode.Z)) && currBeatSeq[beatCounter] == 7 && !hasMatched)
             { //check if T is pressed, is correct & not double counted
                 hasMatched = true;
                 checkAccuracy(microTimer);
@@ -2311,6 +2321,15 @@ public class BeatEngine : MonoBehaviour
        for (int i = 0; i < comboBonusList.Count; i++) {
            if (comboCntr > comboBonusList[i].x) {
                bonusPts = (int) comboBonusList[i].y;
+               if (i > currReachedCombo) {
+                   currReachedCombo = i;
+                   switch (i) {
+                       case 0: combo1.Play(); break;
+                       case 1: combo2.Play(); break;
+                       case 2: combo3.Play(); break;
+                       case 3: combo4.Play(); break;
+                    }
+               }
            } else if (comboCntr < comboBonusList[i].x) {
                break;
            }

@@ -22,7 +22,7 @@ public class FogGenerator : MonoBehaviour
    }
 
    void Update()
-   {
+   {    
    }
 
 }

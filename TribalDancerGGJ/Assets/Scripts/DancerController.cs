@@ -54,22 +54,22 @@ public class DancerController : MonoBehaviour
 	void Update ()
 	{
         if (!BeatEngine.instance.instructMode) {
-            if (Input.GetButtonDown("DPDown") || Input.GetKeyDown(KeyCode.DownArrow)) {
+            if (Input.GetButtonDown("DPDown") || Input.GetKeyDown(KeyCode.X)) {
                 MoveTo(_downPosition);
                 hasMoved = true;
                 if (standingChar) standingChar.SetActive(false);
             }
-            if (Input.GetButtonDown("DPLeft") || Input.GetKeyDown(KeyCode.LeftArrow)) {
+            if (Input.GetButtonDown("DPLeft") || Input.GetKeyDown(KeyCode.A)) {
                 MoveTo(_leftPosition);
                 hasMoved = true;
                 if (standingChar) standingChar.SetActive(false);
             }
-            if (Input.GetButtonDown("DPRight") || Input.GetKeyDown(KeyCode.RightArrow)) { 
+            if (Input.GetButtonDown("DPRight") || Input.GetKeyDown(KeyCode.D)) { 
                 MoveTo(_rightPosition);
                 hasMoved = true;
                 if (standingChar) standingChar.SetActive(false);
             }
-            if (Input.GetButtonDown("DPUp") || Input.GetKeyDown(KeyCode.UpArrow)) {
+            if (Input.GetButtonDown("DPUp") || Input.GetKeyDown(KeyCode.W)) {
                 MoveTo(_upPosition);
                 hasMoved = true;
                 if (standingChar) standingChar.SetActive(false);
