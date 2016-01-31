@@ -5,6 +5,15 @@ using System.Collections;
 
 public class DancerController : MonoBehaviour
 {
+    [SerializeField] GameObject luP;
+    [SerializeField] GameObject uP;
+    [SerializeField] GameObject ruP;
+    [SerializeField] GameObject rP;
+    [SerializeField] GameObject rdP;
+    [SerializeField] GameObject dP;
+    [SerializeField] GameObject ldP;
+    [SerializeField] GameObject lP;
+    [SerializeField] GameObject cP;
 
    private Vector2 _leftUpPosition;
    private Vector2 _upPosition;
@@ -23,15 +32,15 @@ public class DancerController : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-	   _leftUpPosition = GameObject.Find("LeftUp").transform.position;
-      _upPosition = GameObject.Find("Up").transform.position;
-      _rightUpPosition = GameObject.Find("RightUp").transform.position;
-      _rightPosition = GameObject.Find("Right").transform.position;
-      _rightDownPosition = GameObject.Find("RightDown").transform.position;
-      _downPosition = GameObject.Find("Down").transform.position;
-      _leftDownPosition = GameObject.Find("LeftDown").transform.position;
-      _leftPosition = GameObject.Find("Left").transform.position;
-      _centerPosition = GameObject.Find("Center").transform.position;
+        _leftUpPosition = luP.transform.position;
+      _upPosition = uP.transform.position;
+      _rightUpPosition = ruP.transform.position;
+      _rightPosition = rP.transform.position;
+      _rightDownPosition = rdP.transform.position;
+      _downPosition = dP.transform.position;
+      _leftDownPosition = ldP.transform.position;
+      _leftPosition = lP.transform.position;
+      _centerPosition = cP.transform.position;
 
 	   _lastDancerTilePosition = _centerPosition;
 	}
@@ -39,22 +48,24 @@ public class DancerController : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-	   if (Input.GetKeyDown(KeyCode.DownArrow))
-	      MoveTo(_downPosition);
-	   if (Input.GetKeyDown(KeyCode.LeftArrow))
-	      MoveTo(_leftPosition);
-	   if (Input.GetKeyDown(KeyCode.RightArrow))
-	      MoveTo(_rightPosition);
-	   if (Input.GetKeyDown(KeyCode.UpArrow))
-         MoveTo(_upPosition);
-      if (Input.GetKeyDown(KeyCode.Q))
-         MoveTo(_leftUpPosition);
-      if (Input.GetKeyDown(KeyCode.E))
-         MoveTo(_rightUpPosition);
-      if (Input.GetKeyDown(KeyCode.Z))
-         MoveTo(_leftDownPosition);
-      if (Input.GetKeyDown(KeyCode.C))
-         MoveTo(_rightDownPosition);
+        if (!BeatEngine.instance.instructMode) {
+            if (Input.GetButtonDown("DPDown") || Input.GetKeyDown(KeyCode.DownArrow))
+                MoveTo(_downPosition);
+            if (Input.GetButtonDown("DPLeft") || Input.GetKeyDown(KeyCode.LeftArrow))
+                MoveTo(_leftPosition);
+            if (Input.GetButtonDown("DPRight") || Input.GetKeyDown(KeyCode.RightArrow))
+                MoveTo(_rightPosition);
+            if (Input.GetButtonDown("DPUp") || Input.GetKeyDown(KeyCode.UpArrow))
+                MoveTo(_upPosition);
+            if (Input.GetButtonDown("DPX") || Input.GetKeyDown(KeyCode.Q))
+                MoveTo(_leftUpPosition);
+            if (Input.GetButtonDown("DPO") || Input.GetKeyDown(KeyCode.E))
+                MoveTo(_rightUpPosition);
+            if (Input.GetButtonDown("DPT") || Input.GetKeyDown(KeyCode.Z))
+                MoveTo(_leftDownPosition);
+            if (Input.GetButtonDown("DPS") || Input.GetKeyDown(KeyCode.C))
+                MoveTo(_rightDownPosition);
+        }
 	}
 
    private void MoveTo(Vector2 targetPosition)

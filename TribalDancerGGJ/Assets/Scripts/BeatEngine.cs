@@ -7,6 +7,8 @@ using Object = UnityEngine.Object;
 
 public class BeatEngine : MonoBehaviour
 {
+
+    public static BeatEngine instance;
    [SerializeField]
    AudioSource theSong;
    [SerializeField]
@@ -62,13 +64,13 @@ public class BeatEngine : MonoBehaviour
 
    bool hasMatched;
 
-   private int[] beatSequence1 = new int[4];
+   private int[] beatSequence1 = new int[4];//###TO be edited
    private int beatCounter;
 
    [SerializeField]
    Text theScore;
    private int currPoints;
-   private bool instructMode;
+   public bool instructMode;
    private Vector3 hmTop;
    private Vector3 hmBot;
 
@@ -76,6 +78,14 @@ public class BeatEngine : MonoBehaviour
    [SerializeField]
    List<int> symbolsPerDifficulty = new List<int>();
    private int seqPlayed;
+
+   void Awake() {
+       if (instance == null) {
+           instance = this;
+       } else if (instance != this) {
+           Destroy(gameObject);
+       }
+   }
 
    void Start()
    {
@@ -352,21 +362,7 @@ public class BeatEngine : MonoBehaviour
    }
 
    private void danceRequest(int numb)
-   { /*
-      switch (numb)
-      {
-          case 0: if (currentlyVisible) currentlyVisible.SetActive(false); currentlyVisible = symbol0; symbol0.SetActive(true); break;
-          case 1: if (currentlyVisible) currentlyVisible.SetActive(false); currentlyVisible = symbol1; symbol1.SetActive(true); break;
-          case 2: if (currentlyVisible) currentlyVisible.SetActive(false); currentlyVisible = symbol2; symbol2.SetActive(true); break;
-          case 3: if (currentlyVisible) currentlyVisible.SetActive(false); currentlyVisible = symbol3; symbol3.SetActive(true); break;
-          case 4: if (currentlyVisible) currentlyVisible.SetActive(false); currentlyVisible = symbol4; symbol4.SetActive(true); break;
-          case 5: if (currentlyVisible) currentlyVisible.SetActive(false); currentlyVisible = symbol5; symbol5.SetActive(true); break;
-          case 6: if (currentlyVisible) currentlyVisible.SetActive(false); currentlyVisible = symbol6; symbol6.SetActive(true); break;
-          case 7: if (currentlyVisible) currentlyVisible.SetActive(false); currentlyVisible = symbol7; symbol7.SetActive(true); break;
-          default: if (currentlyVisible) currentlyVisible.SetActive(false); currentlyVisible = symbol0; symbol0.SetActive(true); break;
-      }
-      */
-       switch (numb) {
+   {  switch (numb) {
            case 0: symbol0.SetActive(true); StartCoroutine(lightUpTile(symbol0)); break;
            case 1: symbol1.SetActive(true); StartCoroutine(lightUpTile(symbol1)); break;
            case 2: symbol2.SetActive(true); StartCoroutine(lightUpTile(symbol2)); break;
