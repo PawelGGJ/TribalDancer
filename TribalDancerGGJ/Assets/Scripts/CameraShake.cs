@@ -52,13 +52,20 @@ public class CameraShake : MonoBehaviour
       {
          camTransform.localPosition = originalPos;
          FindObjectOfType<Camera>().fieldOfView = InitialCameraField;
+         GameObject.Find("RedSky").GetComponent<SpriteRenderer>().enabled = false;
       }
    }
 
-   public void StartShaking()
+   public void StartShaking(int gameSeconds)
    {
-      Debug.Log("Start shaking!!!!!!!!!!");
-      _currentShakeAmount = InitialShakeAmount;
+      float multiplier = 1f;
+      if (gameSeconds > 60)
+         multiplier = 1.3f;
+      if (gameSeconds > 120)
+         multiplier = 1.8f;
+      if (gameSeconds > 180)
+         multiplier = 2.4f;
+      _currentShakeAmount = InitialShakeAmount * multiplier;
       _currentCameraField = 50f;
    }
 }

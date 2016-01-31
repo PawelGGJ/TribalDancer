@@ -23,12 +23,19 @@ public class CurseManager : MonoBehaviour
 	   }
 	}
 
-   public void PrepareCurse(Curse curse)
+   public void PrepareCurse(Curse curse, int gameSeconds)
    {
+      GameObject.Find("RedSky").GetComponent<SpriteRenderer>().enabled = true;
       if (curse == Curse.Quake)
       {
-         _timeToStartCurse = DateTime.UtcNow.AddMilliseconds(4000);
-         _curseAction = () => FindObjectOfType<CameraShake>().StartShaking();
+         _timeToStartCurse = DateTime.UtcNow.AddMilliseconds(3000);
+         _curseAction = () => FindObjectOfType<CameraShake>().StartShaking(gameSeconds);
+      }
+
+      if (curse == Curse.Blood)
+      {
+         _timeToStartCurse = DateTime.UtcNow.AddMilliseconds(3000);
+         _curseAction = () => FindObjectOfType<FogGenerator>().GenerateFogFor(gameSeconds / 12);
       }
        
   
