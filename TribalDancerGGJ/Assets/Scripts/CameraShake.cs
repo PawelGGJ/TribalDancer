@@ -51,8 +51,6 @@ public class CameraShake : MonoBehaviour
       else
       {
          camTransform.localPosition = originalPos;
-         FindObjectOfType<Camera>().fieldOfView = InitialCameraField;
-         GameObject.Find("RedSky").GetComponent<SpriteRenderer>().enabled = false;
       }
    }
 

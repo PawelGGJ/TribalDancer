@@ -25,7 +25,7 @@ public class CurseManager : MonoBehaviour
 
    public void PrepareCurse(Curse curse, int gameSeconds)
    {
-      GameObject.Find("RedSky").GetComponent<SpriteRenderer>().enabled = true;
+      
       if (curse == Curse.Quake)
       {
          _timeToStartCurse = DateTime.UtcNow.AddMilliseconds(3000);
@@ -37,7 +37,7 @@ public class CurseManager : MonoBehaviour
          _timeToStartCurse = DateTime.UtcNow.AddMilliseconds(3000);
          _curseAction = () => FindObjectOfType<FogGenerator>().GenerateFogFor(gameSeconds / 12);
       }
-       
+      GameObject.Find("Rivers of Lava").SetActive(true);
   
    }
 }

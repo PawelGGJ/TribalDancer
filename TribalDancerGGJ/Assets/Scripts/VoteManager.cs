@@ -85,7 +85,7 @@ public class VoteManager : MonoBehaviour
 	   _beginning = DateTime.UtcNow;
 
       _timeOfNextTrialRequest = DateTime.UtcNow.AddSeconds(15);
-      _timeOfNextTrialResolution = _timeOfNextTrialRequest.AddSeconds(15);
+      _timeOfNextTrialResolution = _timeOfNextTrialRequest.AddSeconds(10);
 	}
 	
 	// Update is called once per frame

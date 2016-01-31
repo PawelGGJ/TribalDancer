@@ -20,7 +20,6 @@ public class Fog : MonoBehaviour
 	   if (DateTime.UtcNow > DeathTime)
 	   {
 	      Destroy(gameObject);
-         GameObject.Find("RedSky").GetComponent<SpriteRenderer>().enabled = false;
 	   }
 	   _angle += (float)new Random().NextDouble()*.2f;
 	   var direction = new Vector2(Mathf.Sin(_angle), Mathf.Cos(_angle / 10)).normalized;
